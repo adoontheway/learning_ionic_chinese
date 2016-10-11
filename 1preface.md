@@ -16,13 +16,13 @@
 
 欢迎读者反馈，**feedback@packtpub.com**
 
-如果在某些方面有专长并且对写作有兴趣或者想参与书籍，请阅读作者引导 **www.packtpub.com\/authors**
+如果在某些方面有专长并且对写作有兴趣或者想参与书籍，请阅读作者引导 **www.packtpub.com/authors**
 
 ## 源代码
 
-源代码可以在 **http:\/\/www.packtpub.com**上面对应的书籍找到。
+源代码可以在 **http://www.packtpub.com**上面对应的书籍找到。
 
 也可以在Github上查看源代码，提交issue，与作者互动:
 
-**https:\/\/www.github.com\/learning-ionic**
+**https://www.github.com/learning-ionic**
 
