@@ -4,6 +4,7 @@
 * [序](chapter1md.md)
 * [关于作者](guan_yu_zuo_zhe.md)
 * [前言](1preface.md)
+* [鸣谢](acknowledgments.md)
 * [第一章 搭载AngularJS](第一章-搭载angularjs.md)
 * [1.1 关注点分离 separation of concerns](ionic---搭载angularjs.md)
 * [1.2 指令 directives](ionic---搭载angularjs---1.md)
