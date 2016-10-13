@@ -1,3 +1,4 @@
+## 什么是Aphache Cordova
 
 简单来讲，Cordova是将你的网页应用与本地应用缝合的软件。  
 Apache Cordova上面是这么声明的：
@@ -8,12 +9,12 @@ HTML, CSS and JavaScript.
 Apache Cordova不止是缝合网页应用和本地应用那么简单，他同时也提供了一套JavaScript写的API用来与设备的本地功能进行交互。
 是的，你可以通过JavaScript调用你的摄像头，照相，然后发送到e-mail。屌不屌？  
   
-为了让你理解这其中发生了什么事情，我们可以看一下下面这张图：  
+为了让你理解这其中其中缘由，我们可以看一下下面这张图：  
 ![screentshot](imgs/20160922145147.png '')  
 可以看到，我们有一个执行HTML/CSS/JS代码的web view。这些代码可以只是简单独立的用户界面片段；
-你需要向远程服务器请求数据而发送的AJAX请求。甚至，这些代码可以做更多的事情，例如直接跟蓝牙对话，取得附近的蓝牙设备列表。
+可以说向远程服务器请求数据而发送的AJAX请求。甚至，这些代码可以做更多的事情，例如直接跟蓝牙对话，取得附近的蓝牙设备列表。
 
-> 关于本章，你可以通过以下Github地址获取源代码，发出issue，和作者沟通https://github.com/learning-ionic/Chapter-2
+> 关于本章，你可以通过以下Github地址获取源代码，发起issue，和作者沟通https://github.com/learning-ionic/Chapter-2
 
 在后续的用例当中，Cordova有一系列的使用的JavaScript 与web view交互然后与设备本地语言（例如，Android的Java）交流，
 从而提供在他们之间建立桥梁的API。例如，如果你想知道你的app中的JavaScript是运行在何种设备上的，你只需要在你的JS文件里面使用以下代码就可以实现：
