@@ -1,8 +1,8 @@
 # 第一章 搭载AngularJS
 Ionic是使用最广的移动混合框架之一。在写这篇文章的时候，Ionic的Github目录已经累计有17,000个star和2,700个fork。
 Ionic建立在AngularJS之上，是一个用来制作MVW的史诗级的框架。
-本章是一个介绍性的章节，主要是用来讲AngularJS以及他是如何为Ionic提供强力的支援的。
-同时我们也会学习几个关键性的AngularJS组件，也就是在使用Ionic的时候会常用到的几个指令和服务。  
+本章是一个介绍性的章节，主要是用来介绍AngularJS以及他是如何为Ionic提供强力支持的。
+同时我们也会学习几个关键AngularJS组件，也就是在使用Ionic的时候会常用到的几个指令和服务。  
 > 本书会假设你对AngularJS有一个基本的认识。如果没有的话，建议你先看看*《AngularJS Essentials》Rodrigo Branas*或者
 *Learning AngularJS, Jack Herrington*的视频，这些可以帮助你对AngularJS有个基本的认识。
 

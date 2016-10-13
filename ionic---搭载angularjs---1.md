@@ -19,7 +19,7 @@
 回想我们之前创建的Search App，想象一下应用中还有很多其他页面需要用到这个搜索表单。并且，他们期望的结果也差不多。  
 此时，我们可以将这个表单功能抽离成一个自定义的指令，而不是去复制粘贴controller和HTML模板代码。
 
-然后你就可以在DOM元素的属性里用到一条新的指令，例如<div my-search></div>，或者你可以创建你自己的标签/元件，例如<my-search></my-search>。
+然后你就可以在DOM元素的属性里用到一条新的指令，例如{% raw %}<div my-search></div>{% endraw %}，或者你可以创建你自己的标签或元件，例如{% raw %}<my-search></my-search>{% endraw %}。
 
 这样你只用写一遍搜索功能，然后就可以各处使用。AngularJS负责在进入view的时候初始化指令，在离开view的时候销毁指令。
 
@@ -156,7 +156,7 @@ searchApp.directive('mySearch', ['ResultsFactory',function(ResultsFactory) {
 }]);
 ```  
 异常简单，但是非常强大！  
-现在，当你在哪里需要一个搜索条的时候，直接扔一个<my-search></my-search>就可以了。  
+现在，当你在哪里需要一个搜索条的时候，直接扔一个{% raw %}<my-search></my-search>{% endraw %}就可以了。  
 你也可以给这条指令进行升级：给他传入一个名为*results-target*的属性。这实际上是页面上的某元素的ID。
 因此，你可以在这个提供的元素里面显示结果，而不是像之前那样在搜索条下面显示结果。
 

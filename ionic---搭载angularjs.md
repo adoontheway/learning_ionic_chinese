@@ -70,7 +70,7 @@ $.post('/getResults', {
 ## AngularJS 组件
 与大部分客户端JavaScript框架不同的是，AngularJS是从HTML驱动的。
 在一个标准的网页中， AngularJS负责在各个关键代码片之间进行连接。
-所以，当你想要为你的HTML页面添加一些AngularJS指令并且包含AngularJS的时候，你可以不用写一行代码就能够轻松加愉快的搞定一个简单的app。
+所以，当你想要为你的HTML页面添加一些AngularJS指令并且包含AngularJS的时候，你可以不用写一行代码就能够轻松加愉快的搞定一个简单的应用。
 
 为了证明我不是吹牛，我们将构建一个带验证功能的没有一行JavaScript代码的登录表单：
 ```
@@ -95,10 +95,10 @@ $.post('/getResults', {
 
 在这里， *ng-disable* 指令的职责是当输入的e-mail和password的值无效时启用**Submit**的disabled属性。
 
-同时，指令的范围被安全的限制到了他声明的元件以及他的子元件。
+同时，指令的范围被安全的限制到了他声明的元件以及他的子元件的范围内。
 这里解决了JavaScript语言的另一个关键性问题：如果没有正确的声明一个变量，那么他就会被附加到Global Object，也就是Window Object。
 
-> 如果你对范围（scope，范围或者作用域）一无所知，那么建议你先过一遍 https://docs.angularjs.org/guide/scope 。如果你对scope和root scope没有正确的认识的话，那么本书学起来将会非常的难。
+> 如果你对范围（scope，范围或者作用域）一无所知，那么建议你先浏览 https://docs.angularjs.org/guide/scope 。  如果你对scope和root scope没有正确的认识的话，那么本书学起来将会非常的难。
 
 现在，我们将会进行到下一个AngularJS组件，名为**Dependency Injection（DI，依赖注入）**。DI负责在有需求的的地方注入相应的代码片。这也是关注点分离的关键促成点之一。
 
@@ -170,8 +170,8 @@ searchApp.controller('AppCtrl', ['$scope','ResultsFactory',function($scope, Resu
 }]);
 ```
 
-> 在AngularJS中，factory组件和service组件是交互使用的。想要更多对他们了解更多，
-请参考stack overflow里面的一个讨论：http://stackoverflow.com/questions/15666048/angularjs-service-vs-provider-vs-factory
+> 在AngularJS中，factory组件和service组件是交互使用的。想要更好的理解，请参考
+stack overflow里面的一个讨论：http://stackoverflow.com/questions/15666048/angularjs-service-vs-provider-vs-factory
 
 *index.html*是由HTML模板组成的。当页面加载时，模板默认（打死我也不会说缺省）是隐藏的。当结果数组发出数据的时候，模板将通过*ng-repeat*指令生成html标记。
 
@@ -184,7 +184,7 @@ searchApp.controller('AppCtrl', ['$scope','ResultsFactory',function($scope, Resu
 这里我们将创建服务端需要的query对象以推进和调用*ResultFactory*里面的*getResults*方法。*getResults*方法返回一个promise，这个promise对象在服务端响应返回之后才可以被解析。
 假设服务端响应成功，我们会把服务端返回的搜索结果传入*$scope.results*。  
 
-*$scope*对象的变更将触发*results*里面所有实例的更新。这样一来就触发了HTML模板上的*ng-repeat*指令，然后这个指令解析新的*results*数组，生成html标记。这样，UI上就成功的显示了最近=新的搜索结果。  
+*$scope*对象的变更将触发*results*里面所有实例的更新。这样一来就触发了HTML模板上的*ng-repeat*指令，然后这个指令解析新的*results*数组，生成html标记。这样，UI上就成功的显示了最新的搜索结果。  
 
 
 > 下载范例代码或者咨询作者，请访问Github：
