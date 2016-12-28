@@ -17,7 +17,7 @@ Ionic入门与进阶手册。
 
 有需要的可以自己去github fork
 
-原本：https://github.com/learning-ionic
+原本：[https://github.com/learning-ionic](https://github.com/learning-ionic)
 
-译本：[https://github.com/AdoBeatTheWorld/learning\\_ionic\\_chinese](https://github.com/AdoBeatTheWorld/learning\_ionic\_chinese)
+译本：https://github.com/AdoBeatTheWorld/learning\_ionic\_chinese
 
