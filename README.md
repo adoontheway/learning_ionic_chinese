@@ -8,6 +8,10 @@ Ionic入门与进阶手册。
 
 快速翻译中，翻译完后再进行review与润色。
 
------------------------------------------
+---
+
 2016-10-7       首译完成  
-2016-10-18      开始review  
+2016-10-18      开始review
+
+2016-12-28   不更新了，有需要的可以自己去github fork译本：https://github.com/AdoBeatTheWorld/learning\_ionic\_chinese
+
