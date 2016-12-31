@@ -1,1 +1,27 @@
-{}
+{
+    "title": "learning ionic中文翻译",
+  "description": "Ionic入门与进阶手册。",
+  "language": "zh",
+  "plugins": [
+      "github",
+      "ad",
+      "-sharing"
+  ],
+   "pluginsConfig": {
+       "github": {
+        "url": "https://github.com/AdoBeatTheWorld/learning_ionic_chinese"
+        },
+        "sharing": {
+            "facebook": true,
+            "twitter": true,
+            "google": true,
+            "weibo": true,
+            "instapaper": false,
+            "vk": false,
+            "all": [
+                "facebook", "google", "twitter",
+                "weibo", "instapaper"
+            ]
+        }
+   }
+}
