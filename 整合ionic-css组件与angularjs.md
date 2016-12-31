@@ -95,7 +95,7 @@ ionic start -a "Example 8" -i app.example.eight example8 blank
 <h3>Rate the App</h3>
 <div>
 <a href="javascript:" ng-repeat="r in  ratingArr" class="padding" style="text-decoration:none;">
-<i class="icon {% {{ %}r.icon{% }} %}" ng-click="setRating(r.value)"></i>
+<i class="icon {{r.icon}}" ng-click="setRating(r.value)"></i>
 </a>
 </div>
 </div>
