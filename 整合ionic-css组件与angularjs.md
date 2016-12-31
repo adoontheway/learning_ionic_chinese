@@ -84,7 +84,7 @@ ionic start -a "Example 8" -i app.example.eight example8 blank
 我们也创建了另一个名为*setRating()*的方法，这个方法将在星星被点击的时候进行调用。这个方法读取作为参数传入的星星的值。
 然后，我们遍历从开始的星星到选中的星星的所有的打分对象的，我们将图标设置为填满的星星，其他的作为轮廓。  
 *www/index.html*的body部分将是如下：
-```
+```javascript
 <body ng-app="starter" ng-controller="MainCtrl">
 <ion-pane>
 <ion-header-bar class="bar-positive">
@@ -95,7 +95,7 @@ ionic start -a "Example 8" -i app.example.eight example8 blank
 <h3>Rate the App</h3>
 <div>
 <a href="javascript:" ng-repeat="r in  ratingArr" class="padding" style="text-decoration:none;">
-<i class="icon _{{r.icon_}}" ng-click="setRating(r.value)"></i>
+<i class="icon {{r.icon}}" ng-click="setRating(r.value)"></i>
 </a>
 </div>
 </div>
