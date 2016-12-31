@@ -24,12 +24,10 @@ http://adripofjavascript.com/blog/drips/truthyand-falsy-values-in-javascript.htm
 </label>
 <label class="item item-input">
 <span class="input-label">Password</span>
-<input type="password" ng-model="password"
-ng-minlength="3">
+<input type="password" ng-model="password" ng-minlength="3">
 </label>
 <div class="padding">
-<button ng-disabled="!email || !password"
-class="button button-block button-positive">Sign In</button>
+<button ng-disabled="!email || !password" class="button button-block button-positive">Sign In</button>
 </div>
 </div>
 ```
@@ -96,7 +94,7 @@ ionic start -a "Example 8" -i app.example.eight example8 blank
 <div class="padding text-center">
 <h3>Rate the App</h3>
 <div>
-<a href="javascript:" ng-repeat="r inratingArr" class="padding" style="text-decoration:none;">
+<a href="javascript:" ng-repeat="r in ratingArr" class="padding" style="text-decoration:none;">
 <i class="icon {{r.icon}}" ng-click="setRating(r.value)"></i>
 </a>
 </div>
