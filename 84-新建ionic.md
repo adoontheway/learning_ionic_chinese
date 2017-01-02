@@ -41,7 +41,7 @@ ionic setup sass
 ```
 <script src="js/directives.js"></script>
 ```
-接下来，我们需要添加Google地图API的引用。在*head*标签的最后添加吐下脚本：
+接下来，我们需要添加Google地图API的引用。在*head*标签的最后添加如下脚本：
 ```
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgE3k3per7mf0qjZLWwlbMXQL1OhH-x44&sensor=true"></script>
 ```
@@ -63,4 +63,3 @@ angular.module('IonicChatApp', ['ionic', 'chatapp.controllers','chatapp.services
 我们也重命名了控制器和服务的命名空间，在指令模组，*ngCordova*, *ngCordovaOayth*和*Firebase*中添加引用。
 > 注意，我们将*ngCordovaOauth*模组作为依赖添加到了主模组。这是因为打包版（ng-cordova.js）在本章编写的时候有个issue。
 如果你使用打包版的Cordova oAuth插件；你就不需要包含此依赖库和他的源代码了。
-

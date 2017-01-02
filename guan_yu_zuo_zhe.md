@@ -2,7 +2,7 @@
 
 **Arvind Ravulavaru**是一个有着超过6年软件开发经验的全栈专家。
 最近2年，他广泛的涉猎了在服务端和客户端的JavaScript使用。
-此前，Arvind的从业经理涵盖了大数据分析，云预防以及管弦乐编曲。
+此前，Arvind的从业经历涵盖了大数据分析，云预防以及管弦乐编曲。
 对于很多数据库他都有不同程度的研究，并使用HJJava和ASP.NET开发和架构了一个应用。  
 
 一年半前，Arvind开始启动了一个名为The Jackal of JavaScript的博客**http://thejackalofjavascript.com**，
