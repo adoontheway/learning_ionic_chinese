@@ -2,12 +2,12 @@
 第一个探索的应用安装包生成方式是使用PhoneGap构建服务。这应该是最简单的Android和iOS安装包生成方式了。  
 
 流程非常简单。我们将整个项目上传到PhoneGap构建服务他就会负责构建安装包了。
-  
+
 > 如果你觉得上传整个项目不切实际，你可以只上传*www*文件夹；但是，需要做以下变更：
 首先，将*config.xml*移动到*www*文件夹内。
 接着，将*resources*文件夹移动到*www*文件夹内。
 最后，修改*config.xml*里面的*resources*文件夹的路径。
-如果你发现你经常干这件事情的话，建议你写一个搅拌来生成一个*PhoneGap deployable*（可部署）文件夹，用来容纳变更后的项目。
+如果你发现你经常干这件事情的话，建议你写一个脚本来生成一个*PhoneGap deployable*（可部署）文件夹，用来容纳变更后的项目。
 
 如果你打算只发布Android版本，你就不用再做别的操作了。
 如果你打算生成iOS安装包，那么你就需要一个Apple Developer Account（苹果开发者账号）并遵照步骤生成所需证书： http://docs.build.phonegap.com/en_US/signing_signing-ios.md.html
@@ -28,6 +28,6 @@
    然后，如前所述，更新config.xml
 5. 上传ZIP文件到  https://build.phonegap.com/apps 点击 Create app
 
-  
+
 将花费数分钟来完成生成流程。
 > 有时候，构建服务会出现错误。等待之后再重试。根据构建服务器的负载，构建流程有时候会比预想的更长。
