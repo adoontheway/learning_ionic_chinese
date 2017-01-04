@@ -6,11 +6,11 @@
    element name, comment or CSS class) that tell AngularJS's HTML compiler
  ($compile) to attach a specifed behavior to that DOM element or even transform
  the DOM element and its children."
- 
+
 > 指令是一个高级别的DOM元素（例如一个属性，元素名，备注或者CSS类）的制作者，告诉AngularJS的HTML编译器（$compiler）给对应的DOM元素添加指定的行为或者转变DOM元素和他的子元素
 
 当你想要在网页上抽离出公用功能的时候，这是一个非常有用的特性。AngularJ的指令已经达成了这些功能，例如：
-* ng-app：在没有传入值的时候，这个指令初始化一个新的默认的AngularJS模组；反之，会初始化一个有名字的模组。
+* ng-app：在没有传入值的时候，这个指令初始化一个新的默认的AngularJS模块；反之，会初始化一个有名字的模块。
 * ng-model： 将输入的元素的值映射到当前scope
 * ng-show： 当传递给ng-show的表达式的值为true的时候，显示对应的DOM元素。
 * ng-hide：当传给ng-hide的表达式的值为true的时候，隐藏对应的DOM元素。
@@ -28,7 +28,7 @@
 
 现在开工。
 
-和其他AngularJS组件一样，所有的指令都绑定到一个模组。在咱们的案例中，我们已经有一个名叫searchApp的模组。我们将绑定一条新的指令到这个模组：
+和其他AngularJS组件一样，所有的指令都绑定到一个模块。在咱们的案例中，我们已经有一个名叫searchApp的模块。我们将绑定一条新的指令到这个模块：
 
 ```
 searchApp.directive('mySearch', [function () {
@@ -47,7 +47,7 @@ searchApp.directive('mySearch', [function () {
 
 > AngularJS里面其他可以限制的值是 A （attribute 属性，） C(class 类），以及M（comment 备注）。你也可以允许指令使用所有的4个格式（ACEM）。
 
-我们创建了一个连接方法。每当指令进入到view的时候，这个方法都会被调用。这个方法有以下3个参数注入其中：
+我们创建了一个链接方法。每当指令进入到view的时候，这个方法都会被调用。这个方法有以下3个参数注入其中：
 
 * scope： 这个参数规定了这个标签在DOM里面的范围。例如，他可以在AppCtrl里面，甚至直接在rootScope(ng-app)里面。
 * iElement： 指令附加到的宿主元素
@@ -106,13 +106,13 @@ function(ResultsFactory) {
         var q = {
           query : scope.query
         };
-        ResultsFactory.getResults(q).then(function(response){ 
+        ResultsFactory.getResults(q).then(function(response){
           scope.results = response.data.results;
         });
       }
     }
   }
-}]) 
+}])
 ```
 
 有了这些，我们可以将index.html更新为：

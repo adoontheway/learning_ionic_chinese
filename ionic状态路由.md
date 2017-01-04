@@ -6,19 +6,19 @@
 * named views 命名视图
 
 ## Ionic路由器
-在应用比较小只有几个页面的情况下，维护状态和管理数据将会比较简单。但是当应用变得越来越复杂的时候，处理模板，模板数据路由相关数据等等，将会点的很难。
-  
-因为，为了使管理复杂多页面Ionic应用变得简单，我们使用Ionic路由器。Ionic路由器和AngularUI路由器一样。
+在应用比较小只有几个页面的情况下，维护状态和管理数据将会比较简单。但是当应用变得越来越复杂的时候，处理模板，模板数据路由相关数据等等，将会变的很难。
+
+因此，为了使管理复杂多页面Ionic应用变得简单，我们使用Ionic路由器。Ionic路由器和AngularUI路由器一样。
 更多信息请参考： https://github.com/angular-ui/ui-router
-  
+
 在AngularUI路由器文件里：  
 > AngularUI Router is a routing framework for AngularJS, which allows you
 to organize the parts of your interface into a state machine. Unlike the $route
 service in the Angular ngRoute module, which is organized around URL routes,
 UI-Router is organized around states, which may optionally have routes, as well
 as other behavior, attached.
-AngularUI路由器是AngularJS的路由框架，他允许将你的借口组织到一个状态机里面。
-与AngularJS ngRouter里面的$routeservice以URL路由组织不同的是，UI-Router是以状态来组织路由的，这个有可能和其他其他附加行为一样有路由行为。
+AngularUI路由器是AngularJS的路由框架，他允许将你的接口组织到一个状态机里面。
+与AngularJS ngRouter里面的$routeservice以URL路由组织不同的是，UI-Router是围绕状态来组织路由的，它可以选择性地拥有路由，行为及附件。
 
 > 更多关于AngularUI 路由的信息，参考：https://github.com/angular-ui/ui-router/wiki
 
@@ -52,7 +52,7 @@ $stateProvider
 参考主页可知这些服务是和Ionic包一起发布出来的。  
 接下来，我们使用*$stateProvider*来定义应用的状态。在这个案例中，状态和视图是一样的。
 *$stateProver*上的*state*方法是用来声明路由的。方法的第一个参数是状态的可读名。第二个参数是由路由配置组成的一个对象。
-作为路由配置的一部分，我们提佛那个了一个URL和URL触发的时候用做渲染的一个模板。  
+作为路由配置的一部分，我们提供了一个URL和当触发URL时用做渲染的一个模板。  
 在上面的配置中，我们创建了两个状态：一个叫做*view1*，这个将在导航到*http://localhost:8100/#/view1*的时候激活，
 第二个叫做*view2*，这个将在导航到*http://localhost:8100/#/view2*的时候激活。  
 当你观察URL的时候，会发现在view的名字的前面有一个#(hash 哈希)。这个哈希告诉浏览器不需要向服务器发起资源请求；取而代之的是，这些资源都是在客户端的，
@@ -68,7 +68,7 @@ JavaScript框架将会负责去渲染他们。
 $urlRouterProvider.otherwise('/view1');
 ```
 在上面这一行代码中，我们指定了默认的URL，当当前URL不能匹配任何配置的状态URL的时候，用户将会被重定向到*view1*状态。/  
-有了这些，我们就已经成功的设置了状态。但是对于设置来将，我们还有一个关键的部分。我们需要告知路由器页面的哪些部分需要使用状态的内容去更新。
+有了这些，我们就已经成功的设置了状态。但是对于设置来讲，我们还有一个关键的部分。我们需要告知路由器页面的哪些部分需要使用状态的内容去更新。
 这一步通过在我们的*index.html*中添加*ion-nav-view*就可以达到了。  
 > 对于状态路由器来将，ion-nav-view和ui-view同样适用。ion-nav-view扩展自ui-view,然后添加了一些功能例如动画和历史。
 
@@ -94,10 +94,10 @@ ionic serve
 ```
 你将会看到下面截屏的效果:  
 ![view1](imgs/chapter-3-25.png 'view1')
-  
+
 当点击 **To View2**按钮的时候，他会将你带到**View2**，如下：  
 ![view2](imgs/chapter-3-26.png 'view2')
-  
+
 注意观察导航后的URL。  
 接下来的范例中，我们将在单独的HTML文件中创建模板然后在咱们的路由器中进行配置。同时，我们也将为*config*对象引入新的属性，名为controller。  
 我们将要创建的是一个双页的app；第一个页面上我们早先创建的登录表单，第二页是那个打分页。  
@@ -165,10 +165,10 @@ ionic serve
 ```
 你将看到如下结果:  
 ![view1](imgs/chapter-3-27.png 'view1')
-  
+
 当点击**To App**按钮的时候，将会看到如下视图：  
 ![view1](imgs/chapter-3-28.png 'view1')
-  
+
 上面的范例示范了如何使用*script*标签在HTML文件里写模板的。  
 在继续我们的真实案例之前，移除我们在*www/index.html*里面的内联模板。  
 我们将在*www*文件夹里面创建一个名为*templates*的文件夹-不是项目根目录，是*www*文件夹，千万记住了。  
@@ -211,7 +211,7 @@ button-clam">Sign Out</button>
 > 如果你没看到更新后的UI，这意味着你还没有删除*www/index.html*里面的基于脚本的模板。*scirpt*标签写入的模板的优先级高于硬盘里面的模板，
 且硬盘里面的模板需要通过AJAX请求才能得到。关于更多的AngularJS模板缓存，请参考： https://docs.angularjs.org/api/ng/service/$templateCache
 
-打开app视图的时候，会发现小星星部件了。这是因为我们的小星星都是基于一个名誉*ratingArr*的区域变量的。我们将会像在*example8*里面那样更新我们的*AppCtrl*:
+打开app视图的时候，会发现小星星部件了。这是因为我们的小星星都是基于一个名为*ratingArr*的区域变量的。我们将会像在*example8*里面那样更新我们的*AppCtrl*:
 ```
 .controller('AppCtrl', function($scope) {
 $scope.ratingArr = [{
@@ -244,7 +244,7 @@ rtgs[i].icon = 'ion-ios-star-outline';
 ```
 现在，当你返回查看视图的时候，会发现小星星又出现了，当你点击他们的时候，一切如你预期一样：  
 ![rating app view](imgs/chapter-3-29.png 'rating app')
-  
+
 虽然，我们将*LoginCtrl*留空。只要你想要，你就可以给**Submit**按钮绑定一个*ng-click*然后在控制器里面调用一个方法做你的有效验证。
 你可以从按钮标签移除*ui-sref*属性使用控制器里面的*$state*服务导航到app视图。*www/templates/login.html*可以用以下代码替换掉：
 ```
@@ -259,7 +259,7 @@ $state.go('app');
 }
 })
 ```
-  
+
 下一个范例中，我们将使用状态路由建立一个稍微复杂一些的UI。我们将建立一个标签组件。但是，首先，我们的看一下AngularUI路由器里面的命名视图。  
 假设在这么一个情景里，当我们路由改变的时候页面有3个地方需要更新。使用AngularJS的*ngRoute*的话，是做不到的，因为*ngRoute*路由器只允许我们每个app里面存在一个*ng-view*。
 但是AngularUI路由器提供了一些名为“命名视图”的东西，在这里你可以在页面上有多个*ui-view*并且对他们命名。
@@ -414,7 +414,7 @@ ionic serve
 ```
 效果图如下：  
 ![names views](imgs/chapter-3-30.png 'named view')
-  
+
 在上面的范例中，我们使用开始模板，从无到有的建立了一个标签组件。我们不用每次都这么做。因为我们有对应的项目模板。
 我们可以很快的通过以下命令来新建一个标签页项目：
 ```
@@ -507,6 +507,6 @@ $scope.chat = Chats.get($stateParams.chatId);
 你也可以试试搭建一个*sidemenu*模板然后看侧边菜单是如何配置路由的。  
 
 ## 总结
-在本章中，我们学习了大部分的Ionic CSS 组件。我们也看过了可用的一些样色样本。接下来，我们整合Ionic CSS组件与AngularJS并添加了一些功能。
+在本章中，我们学习了大部分的Ionic CSS 组件。我们也看过了可用的一些颜色样本。接下来，我们整合Ionic CSS组件与AngularJS并添加了一些功能。
 我们从0开始使用Ionic状态路由器进行工作，创建了一个简单的双页面app。最后，我们探索了标签页界面和主详情视图。  
-在接下来的章节里，我们将会学习使用SCSS的强力来定制Ionic CSS。
+在接下来的章节里，我们将会学习使用强力的SCSS来定制Ionic CSS。

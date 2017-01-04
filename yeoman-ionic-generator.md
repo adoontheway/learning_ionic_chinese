@@ -27,7 +27,7 @@ npm install yo grunt grunt-cli -g
 Grunt是另一个与Gulp类似的构建工具。Grunt和Gulp最大的不同是：Grunt是一个编码之上配置的构建工具，而Gulp是配置之上编码的构建工具。
 > 更多关于Grunt的信息参考： http://gruntjs.com/ 关于我对Gulp与Grunt的见解，这里有更详细的解读：http://arvindr21.github.io/building-n-Scaffolding
 
-就诶下来，我们将要全局安装generator-ionic：
+接下来，我们将要全局安装generator-ionic：
 ```
 npm install generator-ionic –g
 ```
@@ -38,8 +38,8 @@ npm install generator-ionic –g
 yo ionic example4
 ```
 与Ionic CLI不同的是，你需要回到一些关于你想要怎么创建你的应用的问题。你可以参考以下回答：  
-![screentshot](imgs/chapter-2-19.png '') 
-  
+![screentshot](imgs/chapter-2-19.png '')
+
 Yeoman将会下载项目运行所需的所有的东西。一旦Yeoman搭建完成之后，你可以进入到*example4*文件夹。你会看到里面会有大量的文件以及文件夹。
 > 关于完整项目结构，可以参考： https://gitHub.com/diegonetto/generatorionic#project-structure
 
@@ -68,6 +68,6 @@ grunt serve
 本章中，你收获了一些移动混合应用架构的知识。同时你也学会了混合app是如何工作的。我们也看到了app中Cordova是如何将HTML，CSS,以及JS代码缝合到一起然后在web view中执行的。
 然后，我们在本地安装了Ionic开发需要的软件。我们使用Ionic CLI搭建了一个空白模板并且分析了他的项目结构。紧接着，我们搭建了另外两个模板并且区分了他们之间的同步。
 我们还安装了generator-ionic并且用他搭建了一个范例app，分析了他与Ionic CLI搭建的项目之间的不同点。
-> 更多信息可以查看：http://ionicframework.com/present-ionic/slides 
-  
+> 更多信息可以查看：http://ionicframework.com/present-ionic/slides
+
 接下来的章节我们将理解Ionic CSS组件以及路由。这些知识会帮助我们使用Ionic API搭建有趣的用户界面和多页面应用。
