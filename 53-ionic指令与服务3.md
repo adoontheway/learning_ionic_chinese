@@ -35,7 +35,7 @@ ionic serve
         <ion-nav-view name="tab-chats"></ion-nav-view>
     </ion-tab>
     <!-- Account Tab -->
-    <ion-tab title="Account" icon-off="ion-ios-gear-outline" iconon="ion-ios-gear" href="#/tab/account">
+    <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
         <ion-nav-view name="tab-account"></ion-nav-view>
     </ion-tab>
 </ion-tabs>
@@ -73,63 +73,63 @@ ionic serve
 如果想要两边都了菜单的话，*menu.html*看起来是如下效果：
 ```
 <ion-side-menus enable-menu-with-back-views="false">
-<ion-side-menu-content>
-<ion-nav-bar class="bar-stable">
-<ion-nav-back-button>
-</ion-nav-back-button>
-<ion-nav-buttons side="left">
-<button class="button button-icon button-clear ionnavicon" menu-toggle="left">
-</button>
-</ion-nav-buttons>
-<ion-nav-buttons side="right">
-<button class="button button-icon button-clear ionnavicon" menu-toggle="right">
-</button>
-</ion-nav-buttons>
-</ion-nav-bar>
-<ion-nav-view name="menuContent"></ion-nav-view>
-</ion-side-menu-content>
-<ion-side-menu side="left">
-<ion-header-bar class="bar-stable">
-<h1 class="title">Left</h1>
-</ion-header-bar>
-<ion-content>
-<ion-list>
-<ion-item menu-close ng-click="login()">
-Login
-</ion-item>
-<ion-item menu-close href="#/app/search">
-Search
-</ion-item>
-<ion-item menu-close href="#/app/browse">
-Browse
-</ion-item>
-<ion-item menu-close href="#/app/playlists">
-Playlists
-</ion-item>
-</ion-list>
-</ion-content>
-</ion-side-menu>
-<ion-side-menu side="right">
-<ion-header-bar class="bar-stable">
-<h1 class="title">Right</h1>
-</ion-header-bar>
-<ion-content>
-<ion-list>
-<ion-item menu-close ng-click="login()">
-Login
-</ion-item>
-<ion-item menu-close href="#/app/search">
-Search
-</ion-item>
-<ion-item menu-close href="#/app/browse">
-Browse
-</ion-item>
-<ion-item menu-close href="#/app/playlists">
-Playlists
-</ion-item>
-</ion-list>
-</ion-content>
-</ion-side-menu>
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ionnavicon" menu-toggle="left">
+    </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ionnavicon" menu-toggle="right">
+    </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Left</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close ng-click="login()">
+          Login
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+          Search
+        </ion-item>
+        <ion-item menu-close href="#/app/browse">
+          Browse
+        </ion-item>
+        <ion-item menu-close href="#/app/playlists">
+          Playlists
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+  <ion-side-menu side="right">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Right</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close ng-click="login()">
+          Login
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+          Search
+        </ion-item>
+        <ion-item menu-close href="#/app/browse">
+          Browse
+        </ion-item>
+        <ion-item menu-close href="#/app/playlists">
+          Playlists
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
 </ion-side-menus>
 ```
 > 参考此处查看更多关于*side menu*指令和他的服务信息： http://ionicframework.com/docs/nightly/api/directive/ionSideMenus
@@ -145,7 +145,7 @@ ionic start -a "Example 21" -i app.example.twentyone example21 blank
 ionic serve
 ```
 然后这个项目将会运行在浏览器中。  
-然后我们创建一个应用控制器，在其中定义显示和隐藏的方法。 
+然后我们创建一个应用控制器，在其中定义显示和隐藏的方法。
 打开*www/js/app.js*添加以下代码：
 ```
 .controller('AppCtrl', function($scope, $ionicLoading, $timeout) {
@@ -184,7 +184,7 @@ ionic serve
 我们有一个按钮调用*toggleOverlay*。  
 保存所有文件，回到浏览器，点击**Toggle Overlay**按钮，将会看到如图效果：  
 ![run](imgs/chapter-5-16.png 'run')
-  
+
 覆盖层将会在*$ionicLoading*调用*hide*方法之前一直显示。  
 你可以将上面的逻辑放入一个服务中，然后在应用中重复利用。服务代码如下：
 ```
@@ -216,7 +216,7 @@ $scope.showLoadingOverlay = function() {
 ```
 然后，你就可以看到下面这样的效果：  
 ![run](imgs/chapter-5-17.png 'run')
-  
+
 > 你可以后续再配置*show*方法。更新信息参考： http://ionicframework.com/docs/nightly/api/service/$ionicLoading/
 可以使用*$ionicBackdrop*服务来展示一个背景。 http://ionicframework.com/docs/nightly/api/service/$ionicBackdrop
 *$ionicModal*与加载服务差不多： http://ionicframework.com/docs/api/service/$ionicModal
@@ -252,7 +252,7 @@ ionic serve
     };
 })
 ```
-*$ionicActionSheet.show*返回了一个方法，放这个方法执行的时候，关闭了动作表单。*show*方法接受一个对象作为参数，这个对象有以下几个属性：
+*$ionicActionSheet.show*返回了一个方法，当这个方法执行的时候，关闭了动作表单。*show*方法接受一个对象作为参数，这个对象有以下几个属性：
 * buttons：这个显示了一个选项或者按钮列表。
 * destructiveText：高亮一个指定的选项作为一个危险操作
 * titleText：设置动作表单的标题
@@ -265,7 +265,7 @@ ionic serve
 <h1 class="title">Action Sheet Example</h1>
 </ion-header-bar>
 <ion-content class="padding">
-<button class="button button-block button-dark" ngclick="showOptions()">
+<button class="button button-block button-dark" ng-click="showOptions()">
 Show Options
 </button>
 </ion-content>
@@ -274,7 +274,7 @@ Show Options
 ```
 保存所有文件，回到浏览器，然后会看到一个**Show Options**按钮。点击将会看到如下效果：  
 ![run](imgs/chapter-5-18.png 'run')
-  
+
 这个动作表单将会在3秒后隐藏。
 > 在*第八章 制作一个聊天app*的实际操作中，我们将会用到动作表单；其中我们会实现动作表单的按钮处理器。
 更多关于动作表单的信息参考： http://ionicframework.com/docs/nightly/api/service/$ionicActionSheet/
@@ -316,55 +316,52 @@ ionic serve
 接下来，将*www/index.html*的body部分改为如下：
 ```
 <body ng-app="starter" ng-controller="AppCtrl">
-<ion-header-bar class="bar-positive">
-<h1 class="title">Popover Service</h1>
-</ion-header-bar>
-<ion-content class="padding">
-<button class="button button-block button-dark" ngclick="openPopover($event, 'dark')">
-Dark Button
-</button>
-<button class="button button-block button-assertive" ngclick="openPopover($event, 'assertive')">
-Assertive Button
-</button>
-<button class="button button-block button-calm" ngclick="openPopover($event, 'calm')">
-Calm Button
-</button>
-</ion-content>
-<script id="button-options.html" type="text/ng-template">
-<ion-popover-view>
-<ion-header-bar>
-<h1 class="title">{{type}} options</h1>
-</ion-header-bar>
-<ion-content>
-<div class="list">
-<a href="#" class="item item-icon-left">
-<i class="icon ion-ionic"></i> Option One
-</a>
-<a href="#" class="item item-icon-left">
-<i class="icon ion-help-buoy"></i> Option
-Two
-</a>
-<a href="#" class="item item-icon-left">
-<i class="icon ion-hammer"></i> Option
-Three
-</a>
-<a href="#" class="item item-icon-left" ngclick="closePopover()">
-<i class="icon ion-close"></i> Close
-</a>
-</div>
-</ion-content>
-</ion-popover-view>
-</script>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Popover Service</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <button class="button button-block button-dark" ngclick="openPopover($event, 'dark')">
+    Dark Button
+    </button>
+    <button class="button button-block button-assertive" ng-click="openPopover($event, 'assertive')">
+    Assertive Button
+    </button>
+    <button class="button button-block button-calm" ng-click="openPopover($event, 'calm')">
+    Calm Button
+    </button>
+  </ion-content>
+  <script id="button-options.html" type="text/ng-template">
+    <ion-popover-view>
+      <ion-header-bar>
+        <h1 class="title">{{type}} options</h1>
+      </ion-header-bar>
+      <ion-content>
+        <div class="list">
+          <a href="#" class="item item-icon-left">
+            <i class="icon ion-ionic"></i> Option One
+          </a>
+          <a href="#" class="item item-icon-left">
+            <i class="icon ion-help-buoy"></i> Option Two
+          </a>
+          <a href="#" class="item item-icon-left">
+            <i class="icon ion-hammer"></i> Option Three
+          </a>
+          <a href="#" class="item item-icon-left" ng-click="closePopover()">
+            <i class="icon ion-close"></i> Close
+          </a>
+        </div>
+      </ion-content>
+    </ion-popover-view>
+  </script>
 </body>
 ```
 在*ion-content*中，我们创建了3个按钮，每个的心情颜色都不一样（黑暗，武断与冷静）。当用户点击按钮的时候，显示按钮指定的popover。
 在这个范例中，我们只是把心情传进去，然后将心情作为popover的页头。明显，你可以做更多的逻辑。  
-注意，我们的模板内容都是包装在*ion-popover-view*里面的。他会负责恰当的对modal对位。
-> 为了是popover工作正常，模板必须包装在*ion-popover-view*里面。
+注意，我们的模板内容都是包装在*ion-popover-view*里面的。他会负责对恰当的modal对位。
+> 为了使popover工作正常，模板必须包装在*ion-popover-view*里面。
 保存所有文件，返回浏览器，我们会看到3个按钮。点击其中一个按钮，popover的页头将会改变，但是选项却都是一样的:  
 ![run](imgs/chapter-5-19.png 'run')
-  
+
 然后，当我们点击页面上的任何地方或者关闭选项的时候，popover就会关闭。
 > 如果在选中选项的时候想要导航到其他页面的话，一定要调用:**$scope.popover.remove();**
 更多关于Popover的信息，参考： http://ionicframework.com/docs/api/controller/ionicPopover/
-

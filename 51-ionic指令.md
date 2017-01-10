@@ -4,8 +4,8 @@
 在*第三章 Ionic CSS组件和导航*中，我们已经学习过Ionic状态路由器并了解了他是如何工作的。我们也看过了Ionic中的*ion-nav-view*是如何向AngularJS里面的*ui-view*一样工作的。  
 当app启动的时候，*$stateProvider*将会查找默认的状态，然后尝试加载*ion-nav-view*里面对应的模板。  
 ### ion-view
-接下来出场的是*ion-view*指令。*ion-view*是*ion-nav-view*的额砸。这个指令用来作为添加页头信息和其他内容的容器。当应用状态改变的时候，会在父容器*ion-nav-view*内展示对应的视图。  
-在Ionic中，为改善执行效率，视图都会被缓存起来。当视图离开*ion-nav-view*之后，他的字元素都将从DOM中移除，他的scope也将和*$watch*循环断开连接。
+接下来出场的是*ion-view*指令。*ion-view*是*ion-nav-view*的子类。这个指令用来作为添加页头信息和其他内容的容器。当应用状态改变的时候，会在父容器*ion-nav-view*内展示对应的视图。  
+在Ionic中，为改善执行效率，视图都会被缓存起来。当视图离开*ion-nav-view*之后，他的子元素都将从DOM中移除，他的scope也将和*$watch*循环断开连接。
 当之前缓存的视图进入*ion-nav-view*的时候，他的scope将会重新连接，已有的元素都将重新激活。  
 新建一个空白模板项目来学习：
 ```
@@ -40,7 +40,7 @@ ionic serve
         <ion-view view-title="Title">
             <ion-content>
             <h3>Page 1</h3>
-            <button class="button button-dark" uisref="page2">Navigate to Page 2</button>
+            <button class="button button-dark" ui-sref="page2">Navigate to Page 2</button>
             </ion-content>
         </ion-view>
     </script>
@@ -48,7 +48,7 @@ ionic serve
         <ion-view view-title="Title">
             <ion-content>
             <h3>Page 2</h3>
-            <button class="button button-dark" uisref="page1"> Navigate to Page 1</button>
+            <button class="button button-dark" ui-sref="page1"> Navigate to Page 1</button>
             </ion-content>
         </ion-view>
     </script>
@@ -109,7 +109,7 @@ Ionic视图有很多生命周期方法，你可以在这些方法里添加你的
 
 这样，在我们从page1导航到page2的时候，你将会看到下面这样的结果：  
 ![run](imgs/chapter-5-5.png 'run')
-  
+
 你可以追踪这些事件的触发顺序，然后根据需求给他们绑定你的自定义行为。  
 > *$ionicView.loaded*和*$ionicView.unloaded*只会在控制器的*$rootScope*里生效，*$scope*里面不会有任何效果。其他的方法可以。
 
@@ -119,7 +119,7 @@ Ionic视图有很多生命周期方法，你可以在这些方法里添加你的
 ```
 <ion-nav-bar class="bar-assertive">
 <ion-nav-buttons side="left">
-<button class="button button-energized" ngclick="leftyClick()">
+<button class="button button-energized" ng-click="leftyClick()">
 Left Button
 </button>
 </ion-nav-buttons>
@@ -127,7 +127,7 @@ Left Button
 <i class="ion-arrow-left-c"></i> Back
 </ion-nav-back-button>
 <ion-nav-buttons side="right">
-<button class="button button-energized" ngclick="rightyClick()">
+<button class="button button-energized" ng-click="rightyClick()">
 Right Button
 </button>
 </ion-nav-buttons>
@@ -136,12 +136,12 @@ Right Button
 在这段代码中，你可以看到*ion-nav-bar*使用*ion-nav-buttons*或者*ion-nav-back-button*作为子指令。  
 *ion-nav-buttons*用于将按钮展示在页头导航条。更新后的页面效果如下：  
 ![navigation](imgs/chapter-5-6.png 'navigation')
-  
+
 你可以定义*leftyClick()*和*rightyClick()*功能以供按钮点击的时候调用。也可以添加一个Header Controller并定义这些方法，然后将Header Controller添加给*ion-nav-bar*;
-或者也可以在root scope里面定义*lefyClick()*和*rightyClick()*，虽然这个做法不怎么理想化。在实际环境中，根据情况右上角一般显示的是**Logout**按钮，**Option**按钮或者**Add**按钮。  
-*ion-nav-bar*也是*ion=nav-back-button*的宿主。这个指令负责在页面之间导航的时候自动显示返回按钮：  
+或者也可以在root scope里面定义*leftyClick()*和*rightyClick()*，虽然这个做法不怎么理想化。在实际环境中，根据情况右上角一般显示的是**Logout**按钮，**Option**按钮或者**Add**按钮。  
+*ion-nav-bar*也是*ion-nav-back-button*的宿主。这个指令负责在页面之间导航的时候自动显示返回按钮：  
 ![run](imgs/chapter-5-7.png 'run')
-  
+
 看到了吗，返回按钮自动出现了，把左边的按钮从原先的位置挤走了。  
 > *ion-nav-bar*指令只有在模板内容被包装在*ion-view*标签里的时候才会正常工作。
 
@@ -152,26 +152,26 @@ Right Button
 ```
 此时，当你从page1导航只page2的时候，你会发现返回按钮不见了：  
 ![run](imgs/chapter-5-8.png 'run')
-  
+
 ### ion-nav-buttons
 Ionic对页头里面的按钮提供了细粒度的控制。如果你在*ion-view*中声明了*ion-nav-buttons*，在模板中，他们将会覆盖*ion-nav-bar*指令里面的。  
 我们将*page2*模板更新如下：
 ```
 <script type="text/ng-template" id="page2.html">
-<ion-view view-title="Page 2" hide-nav-bar="false" hideback-button="true">
+<ion-view view-title="Page 2" hide-nav-bar="false" hide-back-button="true">
 <ion-nav-buttons side="left">
-<button class="button button-calm" ngclick="settingsClick()">
+<button class="button button-calm" ng-click="settingsClick()">
 Settings
 </button>
 </ion-nav-buttons>
 <ion-nav-buttons side="right">
-<button class="button button-calm" ngclick="optionsClick()">
+<button class="button button-calm" ng-click="optionsClick()">
 Options
 </button>
 </ion-nav-buttons>
 <ion-content>
 <h3>Page 2</h3>
-<button class="button button-dark" uisref="page1">
+<button class="button button-dark" ui-sref="page1">
 Navigate to Page 1
 </button>
 </ion-content>
@@ -182,7 +182,7 @@ Navigate to Page 1
 ```
 <ion-nav-bar class="bar-assertive">
 <ion-nav-buttons side="left">
-<button class="button button-energized" ngclick="leftyClick()">
+<button class="button button-energized" ng-click="leftyClick()">
 Left Button
 </button>
 </ion-nav-buttons>
@@ -190,7 +190,7 @@ Left Button
 <i class="ion-arrow-left-c"></i> Back
 </ion-nav-back-button>
 <ion-nav-buttons side="right">
-<button class="button button-energized" ngclick="rightyClick()">
+<button class="button button-energized" ng-click="rightyClick()">
 Right Button
 </button>
 </ion-nav-buttons>
@@ -198,7 +198,7 @@ Right Button
 ```
 保存文件回到浏览器，page1效果如下：  
 ![run](imgs/chapter-5-9.png 'run')
-  
+
 page2在模板内显示了*ion-nav-button*：  
 ![run](imgs/chapter-5-10.png 'run')
 
@@ -211,7 +211,7 @@ page2在模板内显示了*ion-nav-button*：
 <ion-view ng-controller="PageOneCtrl">
 <ion-content>
 <h3>Page 1</h3>
-<button class="button button-dark" uisref="page2">
+<button class="button button-dark" ui-sref="page2">
 Navigate to Page 2
 </button>
 </ion-content>
@@ -221,7 +221,7 @@ Navigate to Page 2
 <ion-view ng-controller="PageTwoCtrl">
 <ion-content>
 <h3>Page 2</h3>
-<button class="button button-dark" uisref="page1">
+<button class="button button-dark" ui-sref="page1">
 Navigate to Page 1
 </button>
 </ion-content>
@@ -262,7 +262,7 @@ Navigate to Page 1
 我们在*PageTwoCtrl*中注入*$ionicHistory*依赖然后在控制台记录视图切换历史记录。  
 保存文件，返回浏览器，然后从page1导航到page2，我们可以看到如下展示：  
 ![run](imgs/chapter-5-11.png 'run')
-  
+
 *viewHistory*方法返回了一个对象，里面有*backView*（也就是之前视图），*currentView*，*Histtories*以及应用里面所有其他的视图的所有信息。  
 可以通过这个对象得到用户是如何导航到当前页面的；在此情景之下，视图历史非常有用。  
 你依然可以通过*$ionicHistory*服务的函数读取视图历史的独立属性，例如：
@@ -272,7 +272,7 @@ Navigate to Page 1
 * backView：返回当前视图在历史记录栈里面的上一个视图
 * forwardView：然后历史栈中的下一个视图。前视图当中用户从page1导航至page2，然后返回page1的时候有效。此时page2就是*forwardView*。
 * currentStateName：返回当前状态名
-  
+
 为快速测试以上属性，我们更新*PageOneCtrl*和*PageTwoCtrl*如下：
 ```
 .controller('PageOneCtrl', function($scope, $ionicNavBarDelegate,$ionicHistory) {
@@ -293,13 +293,13 @@ Navigate to Page 1
 ```
 现在，当我们导航到page1的时候，可以记录的属性如下：  
 ![run](imgs/chapter-5-12.png 'run')
-  
+
 然后，当导航到**Page 2**的时候，可以看到早先看到的相同的值：  
 ![run](imgs/chapter-5-13.png 'run')
-  
+
 最后，当你再次导航回**Page 1**的时候，将会看到有*forwardView*了：  
 ![run](imgs/chapter-5-14.png 'run')
-  
+
 > 我已经为page1和page的*ion-view*指令设置了 *cache-view="false"*；因此，上面截屏中的*backView*是*null*。
 
 *$ionicHistory*还有3个其他的方法：
@@ -334,6 +334,6 @@ Navigate to Page 1
 ```
 此时，导航到page2，控制台的输出如下：  
 ![run](imgs/chapter-5-15.png 'run')
-  
+
 你会发现，当点击**Navigate to Page 2**的时候，动画效果和过度效果都被禁用了，*backView*是*null*，最后*views*属性只有一个视图：*page2*。  
 你也可以使用这些选项来控制你的应用的历史状态的行为。  

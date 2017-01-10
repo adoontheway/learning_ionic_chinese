@@ -16,7 +16,7 @@
 为了直观显示，运行：** ionic serve **  
 标签界面显示效果如下：  
 ![tabbed stable](imgs/chapter-4-0.png 'tabbed stable')
-  
+
 我们假设这是我们最后的app吧。接下来我们将要为这个布局定制主题，这个主题非常简单。所有蓝色将被替换成鸭绿色（teal）。  
 打开*scss/ionic.app.scss*，复制文件顶部的这行注释：
 ** $positive: #387ef5 !default; **  
@@ -25,7 +25,7 @@
 保存文件，然后后台会运行Sass任务，自动生成新的*ionic.app.css*和*ionic.app.min.css*文件。之后页面就自动刷新了。
 然后你就可以看到这个鸭绿色主题的页面了：  
 ![tabbed stable](imgs/chapter-4-1.png 'tabbed stable')
-  
+
 注意看positive类的所有引用是如何更新到teal的。是不是很屌？管理你的移动app的主题不再像载人航空科技那么复杂了！  
 
 ### 理解Ionic SCSS的设置
@@ -48,7 +48,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 如果你之前用过SCSS的话，你应该会知道任何使用*!default*指定的变量在没有指定值之前是没有默认值的，就跟之前范例一样。  
 为了更好的理解这其中发生了什么，我们先导航到*$ionicons-font-path*变量的路径去，也就是*www/lib/ionic/fonts*。
 这个文件夹包含了4个字体文件，这4个字体文件根据浏览器的兼容性而决定使用哪一个。  
-接着，我们导航只Ionic SCSS框架的所在路径。也就是*www/lib/ionic/scss/ionic*。你可能也发现了，*scss*文件夹内没有叫做*ionic*的文件夹。
+接着，我们导航至Ionic SCSS框架的所在路径。也就是*www/lib/ionic/scss/ionic*。你可能也发现了，*scss*文件夹内没有叫做*ionic*的文件夹。
 因为他是引用自*www/lib/ionic/scss/*文件夹内的*ionic.scss*的。同时注意*scss*文件夹内的其他SCSS文件的名字都是以下划线开头的。  
 当你打开*ionic.scss*的文件的时候，你会发现，这个文件所做的只是把当前文件夹内的其他的SCSS文件导入进来：
 ```

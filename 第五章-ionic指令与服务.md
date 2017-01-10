@@ -24,7 +24,7 @@ Ionic有纯CSS驱动的组件和需要借助JavaScript的魔力达到圆满的�
 以下是一些Ionic服务的示例：
 * 平台 *$ionicPlatform*
 * 滚动 *$ionicScrollDelegate*
-* Modals （什么鬼） *$ionicModal*
+* 模态框 *$ionicModal*
 * 导航条 *$ionicNavBarDelegate*
 * 历史 *$ionicHistory*
 * 弹出框 *$ionicPopup*
