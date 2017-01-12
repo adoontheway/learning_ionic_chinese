@@ -150,19 +150,19 @@ ionic serve
 
 保存所有文件，返回浏览器，将会看到：  
 ![run](imgs/chapter-5-20.png 'run')
-  
+
 在不输入任何数据的情况下点击**Login**，将会显示：  
 ![run](imgs/chapter-5-21.png 'run')
-  
+
 在输入一个无效的pin的时候，将会看到：  
 ![run](imgs/chapter-5-22.png 'run')
-  
+
 取消弹出框的时候，会把你带到一个不安全的区域，这里更你另一次做人的机会：  
 ![run](imgs/chapter-5-23.png 'run')
-  
+
 终于，在你输入了有效的pin值之后，你会被带到一个安全区域，其中可以看到**Confirm**和**Alert**按钮。点击他们之后会看到：  
 ![run](imgs/chapter-5-24.png 'run')
-  
+
 上面的代码不仅讨论了*$ionicPopup*服务，也让你知道了如何搭建自己的应用。  
 
 ### ion-list和ion-item指令
@@ -247,36 +247,35 @@ ionic serve
 接着，修改*www/index.html*的body部分：
 ```
 <body ng-app="starter" ng-controller="AppCtrl">
-<!-- http://codepen.io/ionic/pen/JsHjf -->
-<ion-header-bar class="bar-positive">
-<div class="buttons">
-<button class="button button-icon icon ion-ios-minusoutline" ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
-</div>
-<h1 class="title">Ionic Lists</h1>
-<div class="buttons">
-<button class="button" ng-click="data.showDelete =
-false; data.showReorder = !data.showReorder">
-Reorder
-</button>
-</div>
-</ion-header-bar>
-<ion-content>
-<ion-list show-delete="data.showDelete" showreorder="data.showReorder">
-<ion-item ng-repeat="item in items" item="item"
-class="item-remove-animate">
-{{ item.id }}. {{ item.title }}
-<ion-delete-button class="ion-minus-circled" ngclick="onItemDelete(item)">
-</ion-delete-button>
-<ion-option-button class="button-assertive" ngclick="edit(item)">
-Edit
-</ion-option-button>
-<ion-option-button class="button-calm" ngclick="share(item)">
-Share
-</ion-option-button>
-<ion-reorder-button class="ion-navicon" onreorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorderbutton>
-</ion-item>
-</ion-list>
-</ion-content>
+  <!-- http://codepen.io/ionic/pen/JsHjf -->
+  <ion-header-bar class="bar-positive">
+    <div class="buttons">
+      <button class="button button-icon icon ion-ios-minusoutline" ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+    </div>
+    <h1 class="title">Ionic Lists</h1>
+    <div class="buttons">
+      <button class="button" ng-click="data.showDelete =
+    false; data.showReorder = !data.showReorder">
+        Reorder
+        </button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+      <ion-item ng-repeat="item in items" item="item" class="item-remove-animate">
+        {{ item.id }}. {{ item.title }}
+        <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
+        </ion-delete-button>
+        <ion-option-button class="button-assertive" ng-click="edit(item)">
+          Edit
+        </ion-option-button>
+        <ion-option-button class="button-calm" ng-click="share(item)">
+          Share
+        </ion-option-button>
+        <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorderbutton>
+      </ion-item>
+    </ion-list>
+  </ion-content>
 </body>
 ```
 页头里有两个两个按钮用来切换列表上的删除和重排图标。在*ion-list*指令中，我们使用了*show-delete*和*show-reorder*属性来显示和隐藏列表条目上的图标。  
@@ -284,13 +283,13 @@ Share
 最后添加了*ion-reorfer-button*来显示重排图标。重排的时候，我们将调用*moveItem*方法。  
 保存所有文件，返回浏览器，可以看到：  
 ![run](imgs/chapter-5-25.png 'run')
-  
+
 点击页头的删除图标的时候：  
 ![run](imgs/chapter-5-26.png 'run')
-  
+
 可以通过点击条目左边的删除图标来删除他。点击页头的重排按钮的时候：  
 ![run](imgs/chapter-5-27.png 'run')
-  
+
 可以使用每行提供的操作随便移着玩。你也可以关闭重排，擦掉条目的左边显区域，显示**Share**和**Edit**选项。
 ![run](imgs/chapter-5-28.png 'run')
 > 在使用*collection-repeat*替代*ng-repeat*的情况下，重排将会有问题。
@@ -332,7 +331,7 @@ ionic serve
 ```
 我们之前说过，我们要实现*dragup*手势。我们用了两种方法实现了，一个是使用指令，这个方法可以通过HTML模板看到，另一个是使用*$ionicGesture.on*方法实现的。  
 通常任何与DOM相关的代码都将写成一个（自定义的）指令。在这里，我们将他写在控制器里面以阐明目的。事件类型是*dragup*。我们使用*document.querySelector*API来取得DOM元素，
-然将此元素封装到一个AngularJS元素对象中。这个对象将作为*$ionicGesture.on*方法的第三个传入参数。  
+然后将此元素封装到一个AngularJS元素对象中。这个对象将作为*$ionicGesture.on*方法的第三个传入参数。  
 接下来，更改*www/index.html*的body部分：
 ```
 <body ng-app="starter" ng-controller="AppCtrl">
@@ -359,7 +358,7 @@ ionic serve
 第二个荣是是由*scopeGesture*的值组成的，这些值将会在*onDragUp*方法执行的时候进行更新。*delegateGesture*将在*$ionicGesture.on*方法发出*dragup*事件的时候进行设置。  
 保存所有文件，返回浏览器，可以看到这两个卡片部分。当你拖动第一个卡片内容的时候，第二个卡片的显示内容将会更新，如下：  
 ![run](imgs/chapter-5-29.png 'run')
-  
+
 管理手势非常简单！下面表格显示的是可用于*$ionicGesture.on*方法中的手势指令以及他的事件类型。可以用上述代码来实现以下任何一个手势：  
 ![run](imgs/chapter-5-30.png 'run')
 > 也可以使用*ionic.EventController*工具来实现手势操作。请参考：http://ionicframework.com/docs/api/utility/ionic.EventController/#onGesture

@@ -25,7 +25,7 @@ ionic plugin add https://github.com/EddyVerbruggen/Toast-PhoneGapPlugin.git
 ```
 接着，给Ionic App添加一个平台然后模拟之。效果图如下：  
 ![finally](imgs/chapter-7-11.png 'finally')
-  
+
 在本范例中，我们将使用仅可能小版本的API方法。在学完每个插件之后，我们提供他们的API链接；你可以查看他们支持的其他方法。
 > 更多信息，请访问：http://ngcordova.com/docs/plugins/toast/
 
@@ -69,7 +69,7 @@ ionic plugin add cordova-plugin-dialogs
 ```
 接下来给Ionic App添加一个平台然后进行模拟。效果图如下：  
 ![dialog](imgs/chapter-7-12.png 'dialog')
-  
+
 > 更多信息参考： http://ngcordova.com/docs/plugins/dialogs/
 
 ### $cordovaFlashlight
@@ -127,7 +127,7 @@ ionic plugin add https://github.com/EddyVerbruggen/FlashlightPhoneGap-Plugin.git
 然后在用户切换开关的时候，我们调用*toggleTorch*方法，这样就可以切换手电筒的开关状态了。  
 如果你在设备上运行app的时候，将会看到如下效果：  
 ![flashlight](imgs/chapter-7-13.png 'flashlight')
-  
+
 如果想要验证开关是否会禁用，可以在模拟器中模拟此app。
 > 更多信息参考：http://ngcordova.com/docs/plugins/flashlight/
 
@@ -157,7 +157,7 @@ ionic plugin add de.appplant.cordova.plugin.local-notification
                     <input type="text" ng-model="notifText">
                 </label>
                 <label class="item item-input">
-                    <button class="button button-dark" ngclick="triggerNotification()">
+                    <button class="button button-dark" ng-click="triggerNotification()">
                     Notify
                     </button>
                 </label>
@@ -185,7 +185,7 @@ ionic plugin add de.appplant.cordova.plugin.local-notification
 ```
 模拟此Ionic app的时候，会问你是否允许显示通知。允许之后，你可以根据需求分发通知。  
 ![notification](imgs/chapter-7-14.png 'notification')
-  
+
 > 更多信息参考： http://ngcordova.com/docs/plugins/localNotification/
 
 ### $cordovaGeolocation
@@ -227,7 +227,7 @@ ionic plugin add cordova-plugin-geolocation
 ```
 .controller('GeoCtrl', ['$scope', '$ionicPlatform','$cordovaGeolocation', '$ionicLoading', '$timeout', function($scope, $ionicPlatform, $cordovaGeolocation, $ionicLoading, $timeout) {
     $ionicPlatform.ready(function() {
-        
+
         $scope.modal = $ionicLoading.show({
             content: 'Fetching Current Location...',
             showBackdrop: false
@@ -262,16 +262,16 @@ ionic plugin add cordova-plugin-geolocation
 ```
 在模拟此app的时候，你将被询问是否允许访问定位信息。接受之后，就可以看到下面这样的效果：  
 ![geolocation](imgs/chapter-7-15.png 'geolocation')
-  
+
 > 更多信息参考： http://ngcordova.com/docs/plugins/geolocation/
-  
+
 
 以上范例应该给你很好的演示了如何使用ngCordova。
-  
-> 也可以查看其他关于ngCordova其他一些插件的帖子： http://thejackalofjavascript.com/getting-started-withngcordova 
-完整的插件列表： http://ngcordova.com/docs/plugins/ 
+
+> 也可以查看其他关于ngCordova其他一些插件的帖子： http://thejackalofjavascript.com/getting-started-withngcordova
+完整的插件列表： http://ngcordova.com/docs/plugins/
 当在使用ngCordova的时候，只添加你需要用到的插件。
-参考此帖自定义ngCordova： http://ngcordova.com/build/ 
+参考此帖自定义ngCordova： http://ngcordova.com/build/
 记住，在自定义ngCordova之后，就不能用bower下载ngCordova了。
 
 # 总结

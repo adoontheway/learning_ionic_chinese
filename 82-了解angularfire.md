@@ -16,7 +16,7 @@ app.controller("NamesCtrl", function($scope, $firebaseArray) {
 });
 ```
 首先我们将新建一个AngularJS应用，然后添加了firebase作为依赖。然后我们创建了一个控制器，注入*$firebaseArray*作为依赖。
-一旦调用控制器的时候，我们将创建一个Firebase App的引用。此时，我们将使用name创建一个子集或者内置集然后保存，而不是将他直接存放到根基和。  
+一旦调用控制器的时候，我们将创建一个Firebase App的引用。此时，我们将使用name创建一个子集或者内置集然后保存，而不是将他直接存放到根集合。  
 将*$firebaseArray(ref)* 指派给 *$scope.names* 就可以将他变为同步集合了。简单来说，如果数据存储里面的数据变更的时候，我们的scope变量将会自动同步更新，同时触发视图或者模板里面的更新。
 这种现象也称为三方数据（Three-Way Data）绑定。
 > 更多关于三方数据绑定，请参考： https://www.firebase.com/blog/2013-10-04-firebase-angular-databinding.html

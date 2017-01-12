@@ -80,12 +80,12 @@ $urlRouterProvider.otherwise('/view1');
 完整的*index.html*的*body*代码如下：
 ```
 <body ng-app="starter">
-<ion-pane>
-<ion-header-bar class="bar-stable">
-<h1 class="title">Two Page Application</h1>
-</ion-header-bar>
-<ion-nav-view class="has-header"></ion-nav-view>
-</ion-pane>
+    <ion-pane>
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">Two Page Application</h1>
+        </ion-header-bar>
+        <ion-nav-view class="has-header"></ion-nav-view>
+    </ion-pane>
 </body>
 ```
 保存所有文件然后运行以下命令：
@@ -108,18 +108,18 @@ ionic start -a "Example 10" -i app.example.ten example10 blank
 接下来，我们将要设置路由了。给*www/js/app.js*添加一个*config*方法，如下：
 ```
 .config(function($stateProvider, $urlRouterProvider) {
-$stateProvider
-.state('login', {
-url: '/login',
-templateUrl: 'templates/login.html',
-controller: 'LoginCtrl'
-})
-.state('app', {
-url: '/app',
-templateUrl: 'templates/app.html',
-controller: 'AppCtrl'
-})
-$urlRouterProvider.otherwise('/login');
+	$stateProvider
+		.state('login', {
+			url: '/login',
+			templateUrl: 'templates/login.html',
+			controller: 'LoginCtrl'
+		})
+		.state('app', {
+			url: '/app',
+			templateUrl: 'templates/app.html',
+			controller: 'AppCtrl'
+		})
+	$urlRouterProvider.otherwise('/login');
 })
 ```
 我们有两个状态:*login*和*app*。我们用来一个新的属性名为*templateUrl*替换之前的*template*。
@@ -141,21 +141,21 @@ $urlRouterProvider.otherwise('/login');
 你可以在*body*标签的任何地方添加这个模板。*www/index.html*的*body*部分代码如下：
 ```
 <body ng-app="starter">
-<ion-pane>
-<ion-header-bar class="bar-stable">
-<h1 class="title">My Awesome App</h1>
-</ion-header-bar>
-<ion-nav-view class="has-header"></ion-nav-view>
-</ion-pane>
-<script type="text/ng-template" id="templates/login.html">
-<h1>Login Template</h1>
-<button class="button button-calm" ui-sref="app">To App</button>
-</script>
-<script type="text/ng-template" id="templates/app.html">
-<h1>App Template</h1>
-<button class="button button-royal" ui-sref="login">To
-Login</button>
-</script>
+    <ion-pane>
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">My Awesome App</h1>
+        </ion-header-bar>
+        <ion-nav-view class="has-header"></ion-nav-view>
+    </ion-pane>
+    <script type="text/ng-template" id="templates/login.html">
+        <h1>Login Template</h1>
+        <button class="button button-calm" ui-sref="app">To App</button>
+    </script>
+    <script type="text/ng-template" id="templates/app.html">
+        <h1>App Template</h1>
+        <button class="button button-royal" ui-sref="login">To
+        Login</button>
+    </script>
 </body>
 ```
 留意*script*标签上的*id*属性。他们跟*templateUrl*是一样的。这就是用来连接脚本*tag/ng-template*到路由*templateUrl*的钩子。  
@@ -175,35 +175,32 @@ ionic serve
 在*templates*文件夹里面，新建一个文件名为*login.html*。文件内容和我们在*example7*中用的是一模一样的。*login.html*文件看起来是酱紫的：
 ```
 <div class="list">
-<label class="item item-input">
-<span class="input-label">Email</span>
-<input type="email" ng-model="email">
-</label>
-<label class="item item-input">
-<span class="input-label">Password</span>
-<input type="password" ng-model="password"
-ng-minlength="3">
-</label>
-<div class="padding">
-<button ui-sref="app" ng-disabled="!email || !password"
-class="button button-block button-positive">Sign In</button>
-</div>
+    <label class="item item-input">
+      <span class="input-label">Email</span>
+      <input type="email" ng-model="email">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Password</span>
+      <input type="password" ng-model="password"
+      ng-minlength="3">
+    </label>
+    <div class="padding">
+        <button ui-sref="app" ng-disabled="!email || !password" class="button button-block button-positive">Sign In</button>
+    </div>
 </div>
 ```
 需要注意的是，我们给按钮添加了*ui-sref*。在按钮没有被激活之前，点击这个按钮是不会被重定向到app视图的。  
 接下来，在*templates*文件夹下面新建一个名为*app.html*的文件。文件内容和我们在*example8*里面的是一样的，如下：
 ```
 <div class="padding text-center">
-<h3>Rate the App</h3>
-<div>
-<a href="javascript:" ng-repeat="r in ratingArr"
-class="padding" style="text-decoration:none;">
-<i class="icon {{r.icon}}"
-ng-click="setRating(r.value)"></i>
-</a>
-</div>
-<button ui-sref="login" class="button button-block
-button-clam">Sign Out</button>
+    <h3>Rate the App</h3>
+    <div>
+        <a href="javascript:" ng-repeat="r in ratingArr" class="padding" style="text-decoration:none;">
+            <i class="icon {{r.icon}}" ng-click="setRating(r.value)"></i>
+        </a>
+    </div>
+    <button ui-sref="login" class="button button-block
+    button-clam">Sign Out</button>
 </div>
 ```
 当你保存好了这些文件之后，回到页面，你就会发现login页面出现了。当你输入了一个有效的邮件地址和一个超过3个字符的密码的时候，sign-in按钮将被激活。
@@ -214,32 +211,32 @@ button-clam">Sign Out</button>
 打开app视图的时候，会发现小星星部件了。这是因为我们的小星星都是基于一个名为*ratingArr*的区域变量的。我们将会像在*example8*里面那样更新我们的*AppCtrl*:
 ```
 .controller('AppCtrl', function($scope) {
-$scope.ratingArr = [{
-value: 1,
-icon: 'ion-ios-star-outline'
-}, {
-value: 2,
-icon: 'ion-ios-star-outline'
-}, {
-value: 3,
-icon: 'ion-ios-star-outline'
-}, {
-value: 4,
-icon: 'ion-ios-star-outline'
-}, {
-value: 5,
-icon: 'ion-ios-star-outline'
-}];
-$scope.setRating = function(val) {
-var rtgs = $scope.ratingArr;
-for (var i = 0; i < rtgs.length; i++) {
-if (i < val) {
-rtgs[i].icon = 'ion-ios-star';
-} else {
-rtgs[i].icon = 'ion-ios-star-outline';
-}
-};
-}
+	$scope.ratingArr = [{
+		value: 1,
+		icon: 'ion-ios-star-outline'
+	}, {
+		value: 2,
+		icon: 'ion-ios-star-outline'
+	}, {
+		value: 3,
+		icon: 'ion-ios-star-outline'
+	}, {
+		value: 4,
+		icon: 'ion-ios-star-outline'
+	}, {
+		value: 5,
+		icon: 'ion-ios-star-outline'
+	}];
+	$scope.setRating = function(val) {
+		var rtgs = $scope.ratingArr;
+		for (var i = 0; i < rtgs.length; i++) {
+			if (i < val) {
+				rtgs[i].icon = 'ion-ios-star';
+			} else {
+				rtgs[i].icon = 'ion-ios-star-outline';
+			}
+		};
+	}
 })
 ```
 现在，当你返回查看视图的时候，会发现小星星又出现了，当你点击他们的时候，一切如你预期一样：  
@@ -267,47 +264,47 @@ $state.go('app');
 考虑以下HTML，我们在一个页面上有3个视图部分：
 ```
 <body>
-<div ui-view="partialview1"></div>
-<div ui-view="partialview2"></div>
-<div ui-view="partialview3"></div>
+  <div ui-view="partialview1"></div>
+  <div ui-view="partialview2"></div>
+  <div ui-view="partialview3"></div>
 </body>
 ```
 这样，当配置我们的路由的时候，我们将在我们路由配置对象中引入一个新的属性，名为*views*。
 随后，我们将设计当状态改变的时候，需要调用哪一个控制器和模板。例如：
 ```
 $stateProvider
-.state('page1',{
-views: {
-'partialview1': {
-templateUrl: 'page1-partialview1.html',
-controller: 'Page1Partialview1Ctrl'
-},
-'partialview2': {
-templateUrl: 'page1-partialview2.html',
-controller: 'Page1Partialview2Ctrl'
-},
-'partialview3': {
-templateUrl: 'page1-partialview3.html',
-controller: 'Page1Partialview3Ctrl'
-}
-}
-})
-.state('page2',{
-views: {
-'partialview1': {
-templateUrl: 'page2-partialview1.html',
-controller: 'Page2Partialview1Ctrl'
-},
-'partialview2': {
-templateUrl: 'page2-partialview2.html',
-controller: 'Page2Partialview2Ctrl'
-},
-'partialview3': {
-templateUrl: 'page2-partialview3.html',
-controller: 'Page2Partialview3Ctrl'
-}
-}
-})
+	.state('page1', {
+		views: {
+			'partialview1': {
+				templateUrl: 'page1-partialview1.html',
+				controller: 'Page1Partialview1Ctrl'
+			},
+			'partialview2': {
+				templateUrl: 'page1-partialview2.html',
+				controller: 'Page1Partialview2Ctrl'
+			},
+			'partialview3': {
+				templateUrl: 'page1-partialview3.html',
+				controller: 'Page1Partialview3Ctrl'
+			}
+		}
+	})
+	.state('page2', {
+		views: {
+			'partialview1': {
+				templateUrl: 'page2-partialview1.html',
+				controller: 'Page2Partialview1Ctrl'
+			},
+			'partialview2': {
+				templateUrl: 'page2-partialview2.html',
+				controller: 'Page2Partialview2Ctrl'
+			},
+			'partialview3': {
+				templateUrl: 'page2-partialview3.html',
+				controller: 'Page2Partialview3Ctrl'
+			}
+		}
+	})
 ```
 如你所见，当你在*page1*状态的时候，三个命名视图都将调用对于的视图和控制器，*page2*也是如此。  
 为将相同的理念带入Ionic，我们将对*ion-nav-view*指令添加*name*属性然后使用他来进行命名视图的工作。
@@ -319,24 +316,24 @@ ionic start -a "Example 11" -i app.example.eleven example11 blank
 我们的标签界面将会有两个标签页-*login*和*register*。在模组初始化完成之后，我们将会在*www/js/app.js*中去配置这两个状态：
 ```
 .config(function($stateProvider, $urlRouterProvider) {
-$stateProvider
-.state('login', {
-url: '/login',
-views: {
-login: {
-templateUrl: 'templates/login.html'
-}
-}
-})
-.state('register', {
-url: '/register',
-views: {
-register: {
-templateUrl: 'templates/register.html'
-}
-}
-})
-$urlRouterProvider.otherwise('/login');
+	$stateProvider
+		.state('login', {
+			url: '/login',
+			views: {
+				login: {
+					templateUrl: 'templates/login.html'
+				}
+			}
+		})
+		.state('register', {
+			url: '/register',
+			views: {
+				register: {
+					templateUrl: 'templates/register.html'
+				}
+			}
+		})
+	$urlRouterProvider.otherwise('/login');
 })
 ```
 注意观察*view*属性，以及他的子属性(*login*和*register*)的名称。这就是我们声明*views*对象的方法。  
@@ -345,16 +342,16 @@ $urlRouterProvider.otherwise('/login');
 这样一来，在我们的*www/index.html*中，我们将*body*标签部分的代码替换为以下：
 ```
 <body ng-app="starter">
-<ion-nav-bar class="bar-royal">
-</ion-nav-bar>
-<ion-tabs class="tabs-royal">
-<ion-tab icon="ion-power" ui-sref="login">
-<ion-nav-view name="login"></ion-nav-view>
-</ion-tab>
-<ion-tab icon="ion-person-add" ui-sref="register">
-<ion-nav-view name="register"></ion-nav-view>
-</ion-tab>
-</ion-tabs>
+    <ion-nav-bar class="bar-royal">
+    </ion-nav-bar>
+    <ion-tabs class="tabs-royal">
+        <ion-tab icon="ion-power" ui-sref="login">
+            <ion-nav-view name="login"></ion-nav-view>
+        </ion-tab>
+        <ion-tab icon="ion-person-add" ui-sref="register">
+            <ion-nav-view name="register"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
 </body>
 ```
 如你所见，*ion-tabs*指令是由两个*ion-tab*指令组成的，*ion-tab*指令是由*ion-nav-view*作为内容视图的。
@@ -363,49 +360,49 @@ $urlRouterProvider.otherwise('/login');
 *www/templates/login.html*文件的内容如下：
 ```
 <ion-view view-title="Login">
-<ion-content class="padding">
-<div class="list">
-<label class="item item-input">
-<span class="input-label">Email</span>
-<input type="email" ng-model="email">
-</label>
-<label class="item item-input">
-<span class="input-label">Password</span>
-<input type="password" ng-model="password"
-ng-minlength="3">
-</label>
-<div class="padding">
-<button ng-disabled="!email || !password" class="button button-block button-royal">Sign In</button>
-</div>
-</div>
-</ion-content>
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Email</span>
+              <input type="email" ng-model="email">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Password</span>
+              <input type="password" ng-model="password"
+              ng-minlength="3">
+            </label>
+            <div class="padding">
+                <button ng-disabled="!email || !password" class="button button-block button-royal">Sign In</button>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>
 ```
 注意看我们是如何在*ion-view*指令里面包装模块的，然后是在*ion-conent*指令里。接下来，在*www/templates*下面，
 新建一个名为*register.html*的文件，内容如下：
 ```
 <ion-view view-title="Register">
-<ion-content class="padding">
-<div class="list">
-<label class="item item-input">
-<span class="input-label">Email</span>
-<input type="email" ng-model="email">
-</label>
-<label class="item item-input">
-<span class="input-label">Password</span>
-<input type="password" ng-model="password"
-ng-minlength="3">
-</label>
-<label class="item item-input">
-<span class="input-label">Re-Enter Password</span>
-<input type="password" ng-model="password2"
-ng-minlength="3">
-</label>
-<div class="padding">
-<button ng-disabled="(!email || !password) || (password != password2)" class="button button-block buttonroyal">Sign In</button>
-</div>
-</div>
-</ion-content>
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Email</span>
+              <input type="email" ng-model="email">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Password</span>
+              <input type="password" ng-model="password"
+              ng-minlength="3">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Re-Enter Password</span>
+              <input type="password" ng-model="password2"
+              ng-minlength="3">
+            </label>
+            <div class="padding">
+                <button ng-disabled="(!email || !password) || (password != password2)" class="button button-block buttonroyal">Sign In</button>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>
 ```
 保存所有文件然后运行如下命令：
@@ -423,49 +420,49 @@ ionic start -a "Example 12" -i app.example.twelve example12 tabs
 一旦标签页模板项目搭建完成，进入*www/js/app.js*然后滚动*config*方法，你将会看到app的路由配置。如下：
 ```
 .config(function($stateProvider, $urlRouterProvider) {
-$stateProvider
-.state('tab', {
-url: "/tab",
-abstract: true,
-templateUrl: "templates/tabs.html"
-})
-.state('tab.dash', {
-url: '/dash',
-views: {
-'tab-dash': {
-templateUrl: 'templates/tab-dash.html',
-controller: 'DashCtrl'
-}
-}
-})
-.state('tab.chats', {
-url: '/chats',
-views: {
-'tab-chats': {
-templateUrl: 'templates/tab-chats.html',
-controller: 'ChatsCtrl'
-}
-}
-})
-.state('tab.chat-detail', {
-url: '/chats/:chatId',
-views: {
-'tab-chats': {
-templateUrl: 'templates/chat-detail.html',
-controller: 'ChatDetailCtrl'
-}
-}
-})
-.state('tab.account', {
-url: '/account',
-views: {
-'tab-account': {
-templateUrl: 'templates/tab-account.html',
-controller: 'AccountCtrl'
-}
-}
-});
-$urlRouterProvider.otherwise('/tab/dash');
+	$stateProvider
+		.state('tab', {
+			url: "/tab",
+			abstract: true,
+			templateUrl: "templates/tabs.html"
+		})
+		.state('tab.dash', {
+			url: '/dash',
+			views: {
+				'tab-dash': {
+					templateUrl: 'templates/tab-dash.html',
+					controller: 'DashCtrl'
+				}
+			}
+		})
+		.state('tab.chats', {
+			url: '/chats',
+			views: {
+				'tab-chats': {
+					templateUrl: 'templates/tab-chats.html',
+					controller: 'ChatsCtrl'
+				}
+			}
+		})
+		.state('tab.chat-detail', {
+			url: '/chats/:chatId',
+			views: {
+				'tab-chats': {
+					templateUrl: 'templates/chat-detail.html',
+					controller: 'ChatDetailCtrl'
+				}
+			}
+		})
+		.state('tab.account', {
+			url: '/account',
+			views: {
+				'tab-account': {
+					templateUrl: 'templates/tab-account.html',
+					controller: 'AccountCtrl'
+				}
+			}
+		});
+	$urlRouterProvider.otherwise('/tab/dash');
 });
 ```
 如果你有留意的话，会发现*tab*状态属性有一个新的属性叫做*abstract*设置为*true*。抽象状态是不能切换过去的。
@@ -486,13 +483,13 @@ ionic serve
 去*www/js/app.js*中查看*tab.chat-detail*的状态配置的时候，可以看到如下代码：
 ```
 .state('tab.chat-detail', {
-url: '/chats/:chatId',
-views: {
-'tab-chats': {
-templateUrl: 'templates/chat-detail.html',
-controller: 'ChatDetailCtrl'
-}
-}
+	url: '/chats/:chatId',
+	views: {
+		'tab-chats': {
+			templateUrl: 'templates/chat-detail.html',
+			controller: 'ChatDetailCtrl'
+		}
+	}
 })
 ```
 *url*属性的值是*'/chats/:chatId'*。注意*chatId*前面的冒号。这里告诉路由器*chatId*是一个动态值；

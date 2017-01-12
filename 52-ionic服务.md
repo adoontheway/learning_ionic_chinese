@@ -5,7 +5,7 @@
 # Ionic平台服务
 
 第一个我们将要使用的服务是Ionic Platform服务(*$ionicPlatform*)。这个服务提供设备级别的的钩子，以使你更好的控制你的应用的行为。  
-我们从最基本的*ready*方法开始。这个方法会在设备准备好的时候，或者设备以及准备好的时候立即触发。  
+我们从最基本的*ready*方法开始。这个方法会在设备准备好的时候，或者设备已经准备好的时候立即触发。  
 我们将新建一个项目来学习Ionic Platform服务。新建一个文件夹名为*chapter5*。在文件夹内打开命令行/终端，运行：
 ```
 ionic start -a "Example 16" -i app.example.sixteen example16 blank
@@ -101,7 +101,7 @@ er);
 * 清理加载遮盖层 = 500
 因此，当你想要重写返回按钮的默认行为的时候，你需要这样子去做：
 ```
-var cancelRegisterBackButtonAction = 
+var cancelRegisterBackButtonAction =
   $ionicPlatform.registerBackButtonAction(backButtonCustomHandler,201);
 ```
 这个监听器将重写（抢夺优先权）所有优先级低于201的默认的监听器，也就是清理modal，关闭侧边菜单和预览视图，但是他不会重写优先级高于他的其他的监听器。  
@@ -132,7 +132,7 @@ var cancelVolumeDownButton = $ionicPlatform.on('volumedownbutton',function() {
 });
 ```
 *on*方法返回一个当移除事件监听需要的函数。  
-现在你应该知道在处理移动OS事件和硬件按钮的时候如何更好的控制你的app。 
+现在你应该知道在处理移动OS事件和硬件按钮的时候如何更好的控制你的app。
 ## 页头与页脚
 使用*ion-header-bar*和*ion-footer-bar*指令，可以给你的app添加一个固定的页头和页脚。
 范例结构如下：
@@ -175,7 +175,7 @@ var cancelVolumeDownButton = $ionicPlatform.on('volumedownbutton',function() {
 ```
 结果如下：  
 ![screenshot](imgs/chapter-5-0.png '')
-  
+
 ## 内容 Content
 接下来将要学习的是内容相关的指令。从*ion-content*指令开始。
 
@@ -322,13 +322,13 @@ ionic serve
 
 保存所有文件，然后你可以在浏览器中看到如下画面：  
 ![pull to refresh](imgs/chapter-5-1.png 'pull to refresh')
-  
+
 使用鼠标下拉页面的时候，将会看到这样子的画面：  
 ![refresh](imgs/chapter-5-2.png 'refresh')
-  
+
 一旦promise完成之后，数据将会立即返回控制器然后附加到条目数组里。所以这些流程完成之后，将会触发 *scroll.refreshComplete*事件，隐藏加载图标/spinner。更新后的页面如下：  
 ![refresh](imgs/chapter-5-3.png 'refresh')
-  
+
 > 你也可以通过*ion-refresher*的pulling-text, pulling-iocn, spinner属性设置下拉刷新的文本，图标和spinner。其他可用选择，请参考： http://ionicframework.com/docs/api/directive/ionRefresher/
 
 ### ion-infinite-scroll
@@ -413,5 +413,5 @@ $scope.scrollToTop = function() {
 ```
 现在，无论用户把列表拉到多下面，用户都可以通过按下这个按钮返回列表顶部，如下：  
 ![scrop to top](imgs/chapter-5-4.png '')
-  
+
 > 更多信息关于*$ionicScrollDelegate*请参考： http://ionicframework.com/docs/api/service/$ionicScrollDelegate
