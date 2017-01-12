@@ -20,7 +20,7 @@ ionic setup scss
 我们将使用鸭屎蓝来给侧边菜单app指定主题。第一步我们要做的是修改*$stable*变量：** $stable: #009688 **  
 如果在添加上面的样式之后启动app的服务，你将看到页头已经变成了鸭屎蓝，如下：  
 ![teal header](imgs/chapter-4-2.png 'teal header bar')
-  
+
 页头的文本是黑色的。我们把他设为白色吧。打开*_bar.scss*，找到以下部分：
 ```
 .title {
@@ -71,7 +71,7 @@ ionic setup scss
 ** $bar-stable-text: #eee; **  
 保存文件，然后就可以看到以下效果：  
 ![teal header](imgs/chapter-4-3.png 'teal header bar')
-  
+
 接下来，我们将更改字体的颜色。我们需要重写变量*$base-color*。现在我们要给列表条目增加更多的填充空间。我们再次打开*_items.scss*，找到这个：** padding: $item-padding; **  
 我们可以将*$item-padding*重写为30px。  
 接下来，为每个条目制作一个淡绿色背景。鉴于没有相关变量可用，我们需要去重写这个类：
@@ -83,7 +83,7 @@ ionic setup scss
 ```
 保存文件之后，可以在浏览器里面看到如下效果：  
 ![light green bg](imgs/chapter-4-4.png 'light green bg')
-  
+
 当点击登录连接的时候，将会出现一个modal弹出框。弹出框里面的**Login**按钮使用了positive类作为样式。使用以下值重写这部分：
 ```
 $button-positive-bg: #00BFA5;
@@ -95,7 +95,7 @@ $button-positive-text: #eee;
 可以在*button-style*里找到所有*button-positive*使用的变量列表。这里我们处理了*button*类的两个状态。  
 **Login**modal看起来将会是这样的：  
 ![light green bg](imgs/chapter-4-5.png 'light green bg')
-  
+
 一切看起来都是那么的美好，除了列表条目的边框颜色和列表条目被选中之后的激活的背景色。我们现在就来处理这些。
 打开*_items.scss*，找到*item-style*混合式，这个混合式接收的第二个参数是*$item-default-border*。这个参考将被用作边框色。  
 我们重写他为：
@@ -142,7 +142,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 ```
 最终效果图如下：  
 ![light green bg](imgs/chapter-4-6.png 'light green bg')
-  
+
 这是一个基本的使用SCSS给你的Ionic app制定主题的范例。你可以给他添加更多的组件，然后给他们分别制定主题作为练习。  
 > 我给你展示了如何在Ionic SCSS设置中找到响应的变量和混合式。这个知识点可以用在任何重写变量和重用混合式来定制主题的Ionic SCSS项目。
 
