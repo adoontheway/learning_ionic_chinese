@@ -1,6 +1,6 @@
 # 学习Ionic - 使用Ionic构建实时混合移动应用
 
-## 作者:Arvind Ravulavaru
+## 作者:[Arvind Ravulavaru](https://github.com/arvindr21)
 
 ![Cover](imgs/cover.png "cover")
 
