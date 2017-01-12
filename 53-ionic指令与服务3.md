@@ -260,16 +260,16 @@ ionic serve
 然后更新*www/index.html*的body部分如下：
 ```
 <body ng-app="starter" ng-controller="AppCtrl">
-<ion-pane>
-<ion-header-bar class="bar-stable">
-<h1 class="title">Action Sheet Example</h1>
-</ion-header-bar>
-<ion-content class="padding">
-<button class="button button-block button-dark" ng-click="showOptions()">
-Show Options
-</button>
-</ion-content>
-</ion-pane>
+    <ion-pane>
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">Action Sheet Example</h1>
+        </ion-header-bar>
+        <ion-content class="padding">
+            <button class="button button-block button-dark" ng-click="showOptions()">
+            Show Options
+            </button>
+        </ion-content>
+    </ion-pane>
 </body>
 ```
 保存所有文件，回到浏览器，然后会看到一个**Show Options**按钮。点击将会看到如下效果：  

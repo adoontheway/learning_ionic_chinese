@@ -118,19 +118,19 @@ Ionic视图有很多生命周期方法，你可以在这些方法里添加你的
 现在，我们来看一下稍微强化版的。在*www/index.html*中，使用以下代码替换*ion-nav-bar*：
 ```
 <ion-nav-bar class="bar-assertive">
-<ion-nav-buttons side="left">
-<button class="button button-energized" ng-click="leftyClick()">
-Left Button
-</button>
-</ion-nav-buttons>
-<ion-nav-back-button class="button-clear">
-<i class="ion-arrow-left-c"></i> Back
-</ion-nav-back-button>
-<ion-nav-buttons side="right">
-<button class="button button-energized" ng-click="rightyClick()">
-Right Button
-</button>
-</ion-nav-buttons>
+    <ion-nav-buttons side="left">
+        <button class="button button-energized" ng-click="leftyClick()">
+        Left Button
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-back-button class="button-clear">
+        <i class="ion-arrow-left-c"></i> Back
+    </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+        <button class="button button-energized" ng-click="rightyClick()">
+        Right Button
+        </button>
+    </ion-nav-buttons>
 </ion-nav-bar>
 ```
 在这段代码中，你可以看到*ion-nav-bar*使用*ion-nav-buttons*或者*ion-nav-back-button*作为子指令。  
@@ -158,43 +158,44 @@ Ionic对页头里面的按钮提供了细粒度的控制。如果你在*ion-view
 我们将*page2*模板更新如下：
 ```
 <script type="text/ng-template" id="page2.html">
-<ion-view view-title="Page 2" hide-nav-bar="false" hide-back-button="true">
-<ion-nav-buttons side="left">
-<button class="button button-calm" ng-click="settingsClick()">
-Settings
-</button>
-</ion-nav-buttons>
-<ion-nav-buttons side="right">
-<button class="button button-calm" ng-click="optionsClick()">
-Options
-</button>
-</ion-nav-buttons>
-<ion-content>
-<h3>Page 2</h3>
-<button class="button button-dark" ui-sref="page1">
-Navigate to Page 1
-</button>
-</ion-content>
-</ion-view>
+    <ion-view view-title="Page 2" hide-nav-bar="false" hide-back-button="true">
+        <ion-nav-buttons side="left">
+            <button class="button button-calm" ng-click="settingsClick()">
+            Settings
+            </button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button button-calm" ng-click="optionsClick()">
+            Options
+            </button>
+        </ion-nav-buttons>
+        <ion-content>
+            <h3>Page 2</h3>
+            <button class="button button-dark" ui-sref="page1">
+            Navigate to Page 1
+            </button>
+        </ion-content>
+    </ion-view>
 </script>
 ```
 记住，我们不是对*ion-nav-bar*里面的*ion-nav-buttons*进行更改：
 ```
 <ion-nav-bar class="bar-assertive">
-<ion-nav-buttons side="left">
-<button class="button button-energized" ng-click="leftyClick()">
-Left Button
-</button>
-</ion-nav-buttons>
-<ion-nav-back-button class="button-clear">
-<i class="ion-arrow-left-c"></i> Back
-</ion-nav-back-button>
-<ion-nav-buttons side="right">
-<button class="button button-energized" ng-click="rightyClick()">
-Right Button
-</button>
-</ion-nav-buttons>
+    <ion-nav-buttons side="left">
+        <button class="button button-energized" ng-click="leftyClick()">
+        Left Button
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-back-button class="button-clear">
+        <i class="ion-arrow-left-c"></i> Back
+    </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+        <button class="button button-energized" ng-click="rightyClick()">
+        Right Button
+        </button>
+    </ion-nav-buttons>
 </ion-nav-bar>
+
 ```
 保存文件回到浏览器，page1效果如下：  
 ![run](imgs/chapter-5-9.png 'run')
@@ -208,24 +209,24 @@ page2在模板内显示了*ion-nav-button*：
 更新后的模板如下：
 ```
 <script type="text/ng-template" id="page1.html">
-<ion-view ng-controller="PageOneCtrl">
-<ion-content>
-<h3>Page 1</h3>
-<button class="button button-dark" ui-sref="page2">
-Navigate to Page 2
-</button>
-</ion-content>
-</ion-view>
+    <ion-view ng-controller="PageOneCtrl">
+        <ion-content>
+            <h3>Page 1</h3>
+            <button class="button button-dark" ui-sref="page2">
+            Navigate to Page 2
+            </button>
+        </ion-content>
+    </ion-view>
 </script>
 <script type="text/ng-template" id="page2.html">
-<ion-view ng-controller="PageTwoCtrl">
-<ion-content>
-<h3>Page 2</h3>
-<button class="button button-dark" ui-sref="page1">
-Navigate to Page 1
-</button>
-</ion-content>
-</ion-view>
+    <ion-view ng-controller="PageTwoCtrl">
+        <ion-content>
+            <h3>Page 2</h3>
+            <button class="button button-dark" ui-sref="page1">
+            Navigate to Page 1
+            </button>
+        </ion-content>
+    </ion-view>
 </script>
 ```
 注意看我们移除了*ion-view*上面的所有属性和指令然后给他添加了*ng-controller*。  

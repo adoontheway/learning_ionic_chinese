@@ -237,16 +237,16 @@ Ionic也带来了他的表单元素和布局。
 以下是一个简单的登录表单结构：
 ```
 <ion-content class="padding">
-<div class="list">
-<label class="item item-input">
-<span class="input-label">Username</span>
-<input type="text">
-</label>
-<label class="item item-input">
-<span class="input-label">Password</span>
-<input type="password">
-</label>
-</div>
+    <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password">
+        </label>
+    </div>
 </ion-content>
 ```
 效果图：  
@@ -255,16 +255,16 @@ Ionic也带来了他的表单元素和布局。
 你也可以通过给标签添加一个*item-floating-label*类来创建一个花式表单：
 ```
 <ion-content class="padding">
-<div class="list">
-<label class="item item-input item-floating-label">
-<span class="input-label">Username</span>
-<input type="text" placeholder="Username">
-</label>
-<label class="item item-input item-floating-label">
-<span class="input-label">Password</span>
-<input type="password" placeholder="Password">
-</label>
-</div>
+    <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Username</span>
+          <input type="text" placeholder="Username">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="Password">
+        </label>
+    </div>
 </ion-content>
 ```
 效果图如下：  
@@ -273,12 +273,12 @@ Ionic也带来了他的表单元素和布局。
 你也可以给这些表单元素添加图标。只需要在标签（label）里面添加一个带*placeholder-icon*的*i*标签（tag）就可以了：
 ```
 <ion-content class="padding">
-<div class="list list-inset">
-<label class="item item-input">
-<i class="icon ion-search placeholder-icon"></i>
-<input type="text" placeholder="Search...">
-</label>
-</div>
+    <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Search...">
+        </label>
+    </div>
 </ion-content>
 ```
 效果图如下：  
@@ -287,21 +287,21 @@ Ionic也带来了他的表单元素和布局。
 你也可以添加其他的表单元素，例如文本域(text ares)和选择列表(select)；他们会如期出现并且会非常整齐的融入到其他表单组件中:
 ```
 <ion-content class="padding">
-<div class="list">
-<label class="item item-input">
-<textarea placeholder="This is a &lt;textarea&gt;
-&lt;/textarea&gt;"></textarea>
-</label>
-<label class="item item-input item-select">
-<div class="input-label">
-Gender
-</div>
-<select>
-<option>Male</option>
-<option>Female</option>
-</select>
-</label>
-</div>
+    <div class="list">
+        <label class="item item-input">
+          <textarea placeholder="This is a &lt;textarea&gt;
+          &lt;/textarea&gt;"></textarea>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+          Gender
+          </div>
+          <select>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </label>
+    </div>
 </ion-content>
 ```
 效果图如下：  
@@ -311,26 +311,23 @@ Gender
 以下标记代码展示了一个可选的水果列表：
 ```
 <ion-content class="padding">
-<ul class="list">
-<li class="item item-checkbox">
-<label class="checkbox checkbox-assertive">
-<input type="checkbox">
-</label>
-Apples
-</li>
-<li class="item item-checkbox">
-<label class="checkbox">
-<input type="checkbox">
-</label>
-Oranges
-</li>
-<li class="item item-checkbox checkbox-energized">
-<label class="checkbox">
-<input type="checkbox">
-</label>
-Lemons
-</li>
-</ul>
+    <ul class="list">
+        <li class="item item-checkbox">
+            <label class="checkbox checkbox-assertive">
+              <input type="checkbox">
+            </label> Apples
+        </li>
+        <li class="item item-checkbox">
+            <label class="checkbox">
+              <input type="checkbox">
+            </label> Oranges
+        </li>
+        <li class="item item-checkbox checkbox-energized">
+            <label class="checkbox">
+              <input type="checkbox">
+            </label> Lemons
+        </li>
+    </ul>
 </ion-content>
 ```
 
@@ -341,35 +338,35 @@ Lemons
 以下标记显示了可开闭的的切换开关：
 ```
 <ion-content class="padding">
-<ul class="list">
-<li class="item item-toggle">
-Wifi
-<label class="toggle toggle-assertive">
-<input type="checkbox">
-<div class="track">
-<div class="handle"></div>
-</div>
-</label>
-</li>
-<li class="item item-toggle">
-Bluetooth
-<label class="toggle toggle-positive">
-<input type="checkbox">
-<div class="track">
-<div class="handle"></div>
-</div>
-</label>
-</li>
-<li class="item item-toggle">
-Aeroplane Mode
-<label class="toggle toggle-calm">
-<input type="checkbox">
-<div class="track">
-<div class="handle"></div>
-</div>
-</label>
-</li>
-</ul>
+    <ul class="list">
+        <li class="item item-toggle">
+            Wifi
+            <label class="toggle toggle-assertive">
+            <input type="checkbox">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+            </label>
+        </li>
+        <li class="item item-toggle">
+            Bluetooth
+            <label class="toggle toggle-positive">
+            <input type="checkbox">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+            </label>
+        </li>
+        <li class="item item-toggle">
+            Aeroplane Mode
+            <label class="toggle toggle-calm">
+            <input type="checkbox">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+            </label>
+        </li>
+    </ul>
 </ion-content>
 ```
 
@@ -382,13 +379,12 @@ Aeroplane Mode
 以上效果图需要的代码是这样子的：
 ```
 <ion-content class="padding">
-<div class="list">
-<div class="item range range-positive">
-<i class="icon ion-ios-sunny-outline"></i>
-<input type="range" name="volume" min="0" max="100"
-value="33">
-<i class="icon ion-ios-sunny"></i>
-</div>
-</div>
+    <div class="list">
+        <div class="item range range-positive">
+            <i class="icon ion-ios-sunny-outline"></i>
+            <input type="range" name="volume" min="0" max="100" value="33">
+            <i class="icon ion-ios-sunny"></i>
+        </div>
+    </div>
 </ion-content>
 ```

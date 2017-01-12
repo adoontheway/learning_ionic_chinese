@@ -18,17 +18,17 @@ http://adripofjavascript.com/blog/drips/truthyand-falsy-values-in-javascript.htm
 *www/index.html*文件里面相关代码应该是这样的：
 ```
 <div class="list">
-<label class="item item-input">
-<span class="input-label">Email</span>
-<input type="email" ng-model="email">
-</label>
-<label class="item item-input">
-<span class="input-label">Password</span>
-<input type="password" ng-model="password" ng-minlength="3">
-</label>
-<div class="padding">
-<button ng-disabled="!email || !password" class="button button-block button-positive">Sign In</button>
-</div>
+    <label class="item item-input">
+      <span class="input-label">Email</span>
+      <input type="email" ng-model="email">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Password</span>
+      <input type="password" ng-model="password" ng-minlength="3">
+    </label>
+    <div class="padding">
+        <button ng-disabled="!email || !password" class="button button-block button-positive">Sign In</button>
+    </div>
 </div>
 ```
 保存文件，然后运行以下命令：
@@ -86,21 +86,21 @@ ionic start -a "Example 8" -i app.example.eight example8 blank
 *www/index.html*的body部分将是如下：
 ```javascript
 <body ng-app="starter" ng-controller="MainCtrl">
-<ion-pane>
-<ion-header-bar class="bar-positive">
-<h1 class="title">Ionic Blank Starter</h1>
-</ion-header-bar>
-<ion-content class="padding">
-<div class="padding text-center">
-<h3>Rate the App</h3>
-<div>
-<a href="javascript:" ng-repeat="r in  ratingArr" class="padding" style="text-decoration:none;">
-<i class="icon {{r.icon}}" ng-click="setRating(r.value)"></i>
-</a>
-</div>
-</div>
-</ion-content>
-</ion-pane>
+    <ion-pane>
+        <ion-header-bar class="bar-positive">
+            <h1 class="title">Ionic Blank Starter</h1>
+        </ion-header-bar>
+        <ion-content class="padding">
+            <div class="padding text-center">
+                <h3>Rate the App</h3>
+                <div>
+                    <a href="javascript:" ng-repeat="r in  ratingArr" class="padding" style="text-decoration:none;">
+                        <i class="icon {{r.icon}}" ng-click="setRating(r.value)"></i>
+                    </a>
+                </div>
+            </div>
+        </ion-content>
+    </ion-pane>
 </body>
 ```
 我们给*body*标签添加了*ng-controller*指令，在*ion-content*指令里面，我们有添加了*div*用来在遍历*ratingArr*的时候渲染星星。  
