@@ -36,7 +36,7 @@ ionic setup sass
 <script src="lib/ngCordova/dist/ng-cordova.js"></script>
 <script src="lib/ng-cordova-oauth/dist/ng-cordovaoauth.js"></script>
 ```
-我们也要在app添加添加指令来管理地图。我们稍后会添加这个指令，但是现在只要添加引用就可以了。  
+我们也要在app添加指令来管理地图。我们稍后会添加这个指令，但是现在只要添加引用就可以了。  
 在*services.js*文件的引用之后添加如下*script*标签：
 ```
 <script src="js/directives.js"></script>
