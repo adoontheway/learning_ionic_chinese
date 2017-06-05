@@ -14,21 +14,21 @@ ionic start -a "Example 7" -i app.example.seven example7 blank
 当邮件的模型值和密码的模型值都是*false*的时候*ng-disabled*的值为*true*。  
 > 关于JavaScript中真(truthy)与假(falsy)的概念，请参考：
 http://adripofjavascript.com/blog/drips/truthyand-falsy-values-in-javascript.html
-  
+
 *www/index.html*文件里面相关代码应该是这样的：
 ```
 <div class="list">
-<label class="item item-input">
-<span class="input-label">Email</span>
-<input type="email" ng-model="email">
-</label>
-<label class="item item-input">
-<span class="input-label">Password</span>
-<input type="password" ng-model="password" ng-minlength="3">
-</label>
-<div class="padding">
-<button ng-disabled="!email || !password" class="button button-block button-positive">Sign In</button>
-</div>
+    <label class="item item-input">
+      <span class="input-label">Email</span>
+      <input type="email" ng-model="email">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Password</span>
+      <input type="password" ng-model="password" ng-minlength="3">
+    </label>
+    <div class="padding">
+        <button ng-disabled="!email || !password" class="button button-block button-positive">Sign In</button>
+    </div>
 </div>
 ```
 保存文件，然后运行以下命令：
@@ -37,10 +37,10 @@ ionic serve
 ```
 如果表单里面没有输入，或者输入了无效的数据，按钮将被禁用，大概是这样子的：  
 ![invalid form](imgs/chapter-3-21.png 'invalid form')
-  
+
 如果表单输入有效，按钮将会被激活：  
 ![valid form](imgs/chapter-3-22.png 'valid form')
-  
+
 这个简单的示例展示了AngularJS和Ionic如何一起工作来创建一个伟大的用户体验的。
 上面的范例可以扩展显示有效信息。  
 接下来的范例中，我们将处理一个稍微复杂一些的Ionic和AngularJS的整合。我们将实现一个简单的打分小部件。
@@ -65,7 +65,7 @@ ionic start -a "Example 8" -i app.example.eight example8 blank
         value: 4,
         icon: 'ion-ios-star-outline'
     }, {
-    value: 5,
+        value: 5,
         icon: 'ion-ios-star-outline'
     }];
     $scope.setRating = function(val) {
@@ -86,21 +86,21 @@ ionic start -a "Example 8" -i app.example.eight example8 blank
 *www/index.html*的body部分将是如下：
 ```javascript
 <body ng-app="starter" ng-controller="MainCtrl">
-<ion-pane>
-<ion-header-bar class="bar-positive">
-<h1 class="title">Ionic Blank Starter</h1>
-</ion-header-bar>
-<ion-content class="padding">
-<div class="padding text-center">
-<h3>Rate the App</h3>
-<div>
-<a href="javascript:" ng-repeat="r in  ratingArr" class="padding" style="text-decoration:none;">
-<i class="icon {{r.icon}}" ng-click="setRating(r.value)"></i>
-</a>
-</div>
-</div>
-</ion-content>
-</ion-pane>
+    <ion-pane>
+        <ion-header-bar class="bar-positive">
+            <h1 class="title">Ionic Blank Starter</h1>
+        </ion-header-bar>
+        <ion-content class="padding">
+            <div class="padding text-center">
+                <h3>Rate the App</h3>
+                <div>
+                    <a href="javascript:" ng-repeat="r in  ratingArr" class="padding" style="text-decoration:none;">
+                        <i class="icon {{r.icon}}" ng-click="setRating(r.value)"></i>
+                    </a>
+                </div>
+            </div>
+        </ion-content>
+    </ion-pane>
 </body>
 ```
 我们给*body*标签添加了*ng-controller*指令，在*ion-content*指令里面，我们有添加了*div*用来在遍历*ratingArr*的时候渲染星星。  
@@ -110,8 +110,8 @@ ionic serve
 ```
 你可以看到如下：  
 ![valid form](imgs/chapter-3-23.png 'valid form')
-  
+
 当你选择了第三个星星的时候，显示效果差不多是这样子的：  
 ![valid form](imgs/chapter-3-24.png 'valid form')
-   
+
 完成这些之后，我们已经简单理解了如何整合Ionic CSS组件和AngularJS。下一个主题中，我们将学习AngularUI路由器。

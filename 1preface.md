@@ -25,4 +25,3 @@
 也可以在Github上查看源代码，提交issue，与作者互动:
 
 **https://www.github.com/learning-ionic**
-

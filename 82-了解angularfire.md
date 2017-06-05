@@ -16,8 +16,8 @@ app.controller("NamesCtrl", function($scope, $firebaseArray) {
 });
 ```
 首先我们将新建一个AngularJS应用，然后添加了firebase作为依赖。然后我们创建了一个控制器，注入*$firebaseArray*作为依赖。
-一旦调用控制器的时候，我们将创建一个Firebase App的引用。此时，我们将使用name创建一个子集或者内置集然后保存，而不是将他直接存放到根基和。  
-将*$firebaseArray(ref)* 指派给 *$scope.names* 就可以将他贬为同步集合了。简单来说，如果数据存储里面的数据变更的时候，我们的scope变量将会自动同步更新，同时触发视图或者模板里面的更新。
+一旦调用控制器的时候，我们将创建一个Firebase App的引用。此时，我们将使用name创建一个子集或者内置集然后保存，而不是将他直接存放到根集合。  
+将*$firebaseArray(ref)* 指派给 *$scope.names* 就可以将他变为同步集合了。简单来说，如果数据存储里面的数据变更的时候，我们的scope变量将会自动同步更新，同时触发视图或者模板里面的更新。
 这种现象也称为三方数据（Three-Way Data）绑定。
 > 更多关于三方数据绑定，请参考： https://www.firebase.com/blog/2013-10-04-firebase-angular-databinding.html
 如果想要上面的代码正常执行，需要在你的页面上导入Firebase，AngularJS，以及AngularFire脚本文件。
@@ -70,9 +70,7 @@ app.controller("NamesCtrl", function($scope, $firebaseArray) {
 然后Firebase负责在数据之间进行同步。  
 现在，当你打开 *https://<your-firebase-url>.firebaseio.com* 你将看到：  
 ![updated Firebase](imgs/chapter-8-1.png 'updated Firebase')
-  
+
 这次，数据将被添加到一个子对象或者内置对象的names属性上了。
 > 在运行范例之前，我已经删掉了旧数据。如果想利用Firebase制作一个**Create**，**Read**，**Update**和**Delete**（CRUD，增删改查）的应用的话，参考：
 http://thejackalofjavascript.com/getting-started-withfirebase/
-  
-
