@@ -23,14 +23,16 @@
                 "weibo", "instapaper"
             ]
         },
-		"google-adsense.ads": [
-            {
-            "client": "5249157779",
-            "slot": "6882894136",
-            "format": "auto",
-            "location": ".page-inner section",
-            "style": "width: 100px;"
-            }
-        ]
+		"google-adsense":{
+			"ads": [
+				{
+				"client": "5249157779",
+				"slot": "6882894136",
+				"format": "auto",
+				"location": ".page-inner section",
+				"style": "width: 100px;"
+				}
+			]
+		}
    }
 }
