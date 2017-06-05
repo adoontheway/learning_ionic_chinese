@@ -26,10 +26,10 @@
 		"google-adsense":{
 			"ads": [
 				{
-				"client": "ca-pub-5249157779",
+				"client": "ca-pub-4299054422007963",
 				"slot": "6882894136",
 				"format": "auto",
-				"location": ".page-inner section",
+				"location": ".page-bottom section",
 				"style": "width: 100px;"
 				}
 			]
