@@ -23,7 +23,7 @@
                 "weibo", "instapaper"
             ]
         },
-		"ads": [
+		"google-adsense.ads": [
             {
             "client": "5249157779",
             "slot": "6882894136",
