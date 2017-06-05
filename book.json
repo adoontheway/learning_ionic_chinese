@@ -4,7 +4,7 @@
   "language": "zh",
   "plugins": [
       "github",
-      "ad",
+      "google-adsens",
       "-sharing"
   ],
    "pluginsConfig": {
@@ -22,6 +22,15 @@
                 "facebook", "google", "twitter",
                 "weibo", "instapaper"
             ]
-        }
+        },
+		"ads": [
+            {
+            "client": "5249157779",
+            "slot": "6882894136",
+            "format": "auto",
+            "location": ".page-inner section",
+            "style": "width: 100px;"
+            }
+        ]
    }
 }
