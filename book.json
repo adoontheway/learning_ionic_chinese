@@ -4,7 +4,7 @@
   "language": "zh",
   "plugins": [
       "github",
-      "google-adsense",
+      "adsense",
       "-sharing"
   ],
    "pluginsConfig": {
@@ -23,16 +23,15 @@
                 "weibo", "instapaper"
             ]
         },
-		"google-adsense":{
-			"ads": [
-				{
+		"adsense":{
+
+				
 				"client": "ca-pub-4299054422007963",
 				"slot": "6882894136",
 				"format": "auto",
-				"location": ".page-inner section",
-				"style": "width: 100px;"
-				}
-			]
+				"location": ".page-inner section"
+				
+
 		}
    }
 }
