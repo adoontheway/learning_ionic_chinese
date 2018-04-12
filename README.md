@@ -4,9 +4,9 @@
 
 ![Cover](imgs/cover.png "cover")
 
-Ionic入门与进阶手册。
+Ionic 1入门与进阶手册。
 
-快速翻译中，翻译完后再进行review与润色。
+\[Ionic 2入门与进阶\]\(https://legacy.gitbook.com/book/adobeattheworld/building-mobile-apps-with-ionic-2/details\)
 
 ---
 
@@ -21,5 +21,5 @@ Ionic入门与进阶手册。
 
 原本：[https://github.com/learning-ionic](https://github.com/learning-ionic)
 
-译本：https://github.com/AdoBeatTheWorld/learning\_ionic\_chinese
+译本：[https://github.com/AdoBeatTheWorld/learning\_ionic\_chinese](https://github.com/AdoBeatTheWorld/learning_ionic_chinese)
 
